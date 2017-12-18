@@ -1,19 +1,37 @@
 var words = [];
+var score = [];
+var max = 0;
+var divide = 1;
+var counter;
 var fill = d3.scale.category20();
 
 function fetchJSON(words_value) {
   var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   var targetUrl = 'https://api.datamuse.com/words?ml=' + words_value;
+  words = [];
+  score = [];
+  max = 0;
+  divide = 1;
   fetch(proxyUrl + targetUrl)
     .then(blob => blob.json())
     .then(data => {
       for (i = 0; i < data.length; i++) {
         words[i] = data[i].word;
+        score[i] = data[i].score;
+        if (data[i].score > max) {
+          max = data[i].score;
+        }
       }
+      divide = max / 100;
+      console.log(max);
+      words.unshift(words_value);
+      score.unshift(100000);
+      counter = 0;
       var layout = d3.layout.cloud()
-        .size([600, 400])
+        .size([900, 600])
         .words(words.map(function (d) {
-            return { text: d, size: 10 + Math.random() * 25, test: "haha" };
+            counter++;
+            return { text: d, size: score[counter - 1] / divide };
           }))
         .padding(5)
         .rotate(function () { return ~~(Math.random() * 2) * 90; })
