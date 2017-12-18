@@ -28,7 +28,7 @@ function fetchJSON(words_value) {
       score.unshift(100000);
       counter = 0;
       var layout = d3.layout.cloud()
-        .size([900, 600])
+        .size([1200, 900])
         .words(words.map(function (d) {
             counter++;
             return { text: d, size: score[counter - 1] / divide };
