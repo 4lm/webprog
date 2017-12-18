@@ -2,8 +2,8 @@ var words = [];
 var fill = d3.scale.category20();
 
 function fetchJSON(words_value) {
-  var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-    targetUrl = 'https://api.datamuse.com/words?ml=' + words_value;
+  var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  var targetUrl = 'https://api.datamuse.com/words?ml=' + words_value;
   fetch(proxyUrl + targetUrl)
     .then(blob => blob.json())
     .then(data => {
