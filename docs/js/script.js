@@ -40,6 +40,7 @@ function fetchJSON(words_value) {
         .on("end", draw);
       layout.start();
       function draw(words) {
+        document.getElementById("cloud").innerHTML = "";
         d3.select("#cloud").append("svg")
           .attr("width", layout.size()[0])
           .attr("height", layout.size()[1])
@@ -73,8 +74,9 @@ document.getElementById("button").addEventListener("click", function () {
     document.getElementById("words").style.backgroundColor = "#fa8072";
   }
   if (bool_words) {
-    var words_value = document.getElementById("words").value;
     document.getElementById("cloud").innerHTML = "";
+    document.getElementById("cloud").innerHTML = "<img src=\"images/ajax-loader.gif\">";
+    var words_value = document.getElementById("words").value;
     words = [];
     fetchJSON(words_value);
     document.getElementById("words").value = "";
