@@ -1,7 +1,7 @@
 var fill = d3.scale.category20(); // color scheme 
 
-function fetchJSONandDraw(words_value) {
-  words_value = words_value.replace(/\s/g, "+"); // for API call
+function fetchJSONandDraw(words_value, keyword) {
+  words_value = words_value.toLowerCase();
   // Use of proxy server to add CORS to original API response
   var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   var targetUrl = 'https://api.datamuse.com/words?ml=' + words_value;
@@ -22,9 +22,13 @@ function fetchJSONandDraw(words_value) {
         }
       }
       divide = max / 100;
-      console.log(max);
-      words.unshift(words_value);
-      score.unshift(100000);
+      if (keyword == "true") {
+        words.unshift(words_value);
+        score.unshift(100000);
+      }
+      console.log("Keyword: " + words[0]);
+      console.log("Max score: " + max);
+      console.log("Include keyword: " + keyword);
       // Define layout
       var layout = d3.layout.cloud()
         .size([1200, 900])
@@ -76,8 +80,9 @@ document.getElementById("button").addEventListener("click", function () {
     document.getElementById("cloud").innerHTML = "";
     document.getElementById("cloud").innerHTML = "<img src=\"images/ajax-loader.gif\">";
     var words_value = document.getElementById("words").value;
+    var keyword = document.querySelector('input[name="keyword"]:checked').value;
     words = [];
-    fetchJSONandDraw(words_value);
+    fetchJSONandDraw(words_value, keyword);
     document.getElementById("words").value = "";
   }
 });
