@@ -1,7 +1,21 @@
-var fill = d3.scale.category20(); // color scheme 
+function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme) {
 
-function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font) {
-  
+  switch (parseInt(color_scheme)) {
+    case 1:
+      var fill = d3.scale.category10();
+      break;
+    case 2:
+      var fill = d3.scale.category20();
+      break;
+    case 3:
+      var fill = d3.scale.category20b();
+      break;
+    case 4:
+      var fill = d3.scale.category20c();
+      break;
+    default:
+      var fill = d3.scale.category10();
+  }
   words_value = words_value.toLowerCase();
   // Use of proxy server to add CORS to original API response
   var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -119,8 +133,9 @@ document.getElementById("button").addEventListener("click", function () {
     var orientations = document.querySelector('input[name="orientations"]:checked').value;
     var padding = document.getElementById("padding").value;
     var font = document.getElementById("font").value;
+    var color_scheme = document.getElementById("color_scheme").value;
 
     words = [];
-    fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font);
+    fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme);
   }
 });
