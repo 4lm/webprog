@@ -1,6 +1,6 @@
 var fill = d3.scale.category20(); // color scheme 
 
-function fetchJSONandDraw(words_value, keyword) {
+function fetchJSONandDraw(words_value, keyword, capitalize) {
   words_value = words_value.toLowerCase();
   // Use of proxy server to add CORS to original API response
   var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -29,6 +29,12 @@ function fetchJSONandDraw(words_value, keyword) {
       console.log("Keyword: " + words[0]);
       console.log("Max score: " + max);
       console.log("Include keyword: " + keyword);
+      if (capitalize == "true") {
+        for (i = 0; i < words.length; i++) {
+          words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        }
+      }
+
       // Define layout
       var layout = d3.layout.cloud()
         .size([1200, 900])
@@ -79,10 +85,13 @@ document.getElementById("button").addEventListener("click", function () {
   if (bool_words) {
     document.getElementById("cloud").innerHTML = "";
     document.getElementById("cloud").innerHTML = "<img src=\"images/ajax-loader.gif\">";
+
     var words_value = document.getElementById("words").value;
     var keyword = document.querySelector('input[name="keyword"]:checked').value;
+    var capitalize = document.querySelector('input[name="capitalize"]:checked').value;
+
     words = [];
-    fetchJSONandDraw(words_value, keyword);
+    fetchJSONandDraw(words_value, keyword, capitalize);
     document.getElementById("words").value = "";
   }
 });
