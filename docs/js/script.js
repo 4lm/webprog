@@ -46,7 +46,7 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words) {
             return { text: word, size: score[counter] / divide };
           }))
         .padding(5)
-        .rotate(() => ~~(Math.random() * 2) * 90)
+        .rotate(() => ~~(Math.random() * 1) * 90)
         .font("Impact")
         .fontSize(d => d.size)
         .on("end", draw);
@@ -96,6 +96,5 @@ document.getElementById("button").addEventListener("click", function () {
 
     words = [];
     fetchJSONandDraw(words_value, keyword, capitalize, max_words);
-    document.getElementById("words").value = "";
   }
 });
