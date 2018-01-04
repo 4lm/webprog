@@ -72,13 +72,17 @@
   </div>
   <div>
     <label>Canvas format:
-      <select name="canvas_format">
-        <option>4:3</option>
-        <option>16:9</option>
-        <option>1:1</option>
-        <option>3:2</option>
+      <select id="canvas_format">
+        <option value='1'>4:3</option>
+        <option value='2'>16:9</option>
+        <option value='3'>1:1</option>
+        <option value='4'>2:1</option>
       </select>
     </label>
+  </div>
+  <div>
+    <label>Download:</label>
+    <button id="download-svg">SVG</button>
   </div>
   <div>
     <button id="button">OK</button>

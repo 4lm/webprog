@@ -1,4 +1,4 @@
-function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme) {
+function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format) {
 
   switch (parseInt(color_scheme)) {
     case 1:
@@ -16,6 +16,24 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
     default:
       var fill = d3.scale.category10();
   }
+
+  switch (parseInt(canvas_format)) {
+    case 1:
+      var canvas = [1200, 900];
+      break;
+    case 2:
+      var canvas = [1200, 675];
+      break;
+    case 3:
+      var canvas = [1200, 1200];
+      break;
+    case 4:
+      var canvas = [1200, 600];
+      break;
+    default:
+      var canvas = [1200, 900];
+  }
+
   words_value = words_value.toLowerCase();
   // Use of proxy server to add CORS to original API response
   var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -57,7 +75,7 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
       score = score.slice(0, parseInt(max_words));
       // Define layout
       var layout = d3.layout.cloud()
-        .size([1200, 900])
+        .size(canvas)
         .words(words.map(function (word) {
           counter++;
           return { text: word, size: score[counter] / divide };
@@ -134,8 +152,8 @@ document.getElementById("button").addEventListener("click", function () {
     var padding = document.getElementById("padding").value;
     var font = document.getElementById("font").value;
     var color_scheme = document.getElementById("color_scheme").value;
-
+    var canvas_format = document.getElementById("canvas_format").value;
     words = [];
-    fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme);
+    fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format);
   }
 });
