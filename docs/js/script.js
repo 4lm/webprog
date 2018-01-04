@@ -92,7 +92,7 @@ document.getElementById("button").addEventListener("click", function () {
     var words_value = document.getElementById("words").value;
     var keyword = document.querySelector('input[name="keyword"]:checked').value;
     var capitalize = document.querySelector('input[name="capitalize"]:checked').value;
-    var max_words = document.querySelector('input[name="max_words"]:checked').value;
+    var max_words = document.getElementById("max_words").value;
 
     words = [];
     fetchJSONandDraw(words_value, keyword, capitalize, max_words);
