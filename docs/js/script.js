@@ -1,6 +1,6 @@
 var fill = d3.scale.category20(); // color scheme 
 
-function fetchJSONandDraw(words_value, keyword, capitalize, max_words) {
+function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations) {
   words_value = words_value.toLowerCase();
   // Use of proxy server to add CORS to original API response
   var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -42,11 +42,30 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words) {
       var layout = d3.layout.cloud()
         .size([1200, 900])
         .words(words.map(function (word) {
-            counter++;
-            return { text: word, size: score[counter] / divide };
-          }))
+          counter++;
+          return { text: word, size: score[counter] / divide };
+        }))
         .padding(5)
-        .rotate(() => ~~(Math.random() * 1) * 90)
+        .rotate(() => {
+          var angle = 0; 
+          switch (parseInt(orientations)) {
+            case 1:
+              // angle is 0
+              break;
+            case 2:
+              angle = ~~(Math.random() * 2) * 90;
+              break;
+            case 3:
+              angle = (~~(Math.random() * 2) + ~~(Math.random() * 2)) * 45;
+              break;
+            case 4:
+              angle = (~~(Math.random() * 2) + ~~(Math.random() * 2) + ~~(Math.random() * 2)) * 45;
+              break;
+            default:
+              // angle is 0
+          }
+          return angle;
+        })
         .font("Impact")
         .fontSize(d => d.size)
         .on("end", draw);
@@ -93,8 +112,9 @@ document.getElementById("button").addEventListener("click", function () {
     var keyword = document.querySelector('input[name="keyword"]:checked').value;
     var capitalize = document.querySelector('input[name="capitalize"]:checked').value;
     var max_words = document.getElementById("max_words").value;
+    var orientations = document.querySelector('input[name="orientations"]:checked').value;
 
     words = [];
-    fetchJSONandDraw(words_value, keyword, capitalize, max_words);
+    fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations);
   }
 });
