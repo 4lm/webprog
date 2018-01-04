@@ -1,6 +1,7 @@
 var fill = d3.scale.category20(); // color scheme 
 
-function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding) {
+function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font) {
+  
   words_value = words_value.toLowerCase();
   // Use of proxy server to add CORS to original API response
   var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -29,13 +30,15 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
       console.log("Keyword: " + words[0]);
       console.log("Max score: " + max);
       console.log("Include keyword: " + keyword);
+      console.log("Max words: " + max_words);
+      console.log("Font: " + font);
 
       if (capitalize == "true") {
         for (i = 0; i < words.length; i++) {
           words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
         }
       }
-      console.log("Max words: " + max_words);
+      
       words = words.slice(0, parseInt(max_words));
       score = score.slice(0, parseInt(max_words));
       // Define layout
@@ -66,7 +69,7 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
           }
           return angle;
         })
-        .font("Impact")
+        .font(font)
         .fontSize(d => d.size)
         .on("end", draw);
 
@@ -83,7 +86,8 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
           .data(words)
           .enter().append("text")
           .style("font-size", d => d.size + "px")
-          .style("font-family", "Impact")
+          .style("font-family", font)
+          .style("font-weight", "bold")
           .style("fill", (d, i) => fill(i))
           .attr("text-anchor", "middle")
           .attr("transform", d => "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")")
@@ -114,8 +118,9 @@ document.getElementById("button").addEventListener("click", function () {
     var max_words = document.getElementById("max_words").value;
     var orientations = document.querySelector('input[name="orientations"]:checked').value;
     var padding = document.getElementById("padding").value;
+    var font = document.getElementById("font").value;
 
     words = [];
-    fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding);
+    fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font);
   }
 });

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Gloria+Hallelujah|Lobster|Oswald" rel="stylesheet">
   <!-- JavaScript includes are in the body element at the bottom -->
   <title>Syno Word Cloud</title>
 </head>
@@ -50,13 +51,12 @@
     <input type="number" id="padding" value="3" min="0">
   </div>
   <div>
-    <label>Fonts:
-      <select name="fonts">
-        <option>Sans Serif</option>
-        <option>Serif</option>
-        <option>Display</option>
-        <option>Handwriting</option>
-        <option>Monospace</option>
+    <label>Font:
+      <select id="font">
+        <option value='Oswald'>Oswald</option>
+        <option value='Lobster'>Lobster</option>
+        <option value='Gloria Hallelujah'>Gloria</option>
+        <option value='Cutive Mono'>Cutive</option>
       </select>
     </label>
   </div>
