@@ -19,19 +19,19 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
 
   switch (parseInt(canvas_format)) {
     case 1:
-      var canvas = [1200, 900];
+      var canvas = [800, 600];
       break;
     case 2:
-      var canvas = [1200, 675];
+      var canvas = [800, 450];
       break;
     case 3:
-      var canvas = [1200, 1200];
+      var canvas = [800, 800];
       break;
     case 4:
-      var canvas = [1200, 600];
+      var canvas = [800, 400];
       break;
     default:
-      var canvas = [1200, 900];
+      var canvas = [800, 600];
   }
 
   words_value = words_value.toLowerCase();
