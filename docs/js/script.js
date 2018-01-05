@@ -64,6 +64,7 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
       console.log("Include keyword: " + keyword);
       console.log("Max words: " + max_words);
       console.log("Font: " + font);
+      console.log("Padding: " + padding);
 
       if (capitalize == "true") {
         for (i = 0; i < words.length; i++) {
@@ -141,6 +142,7 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
 }
 
 function downloadSVG() {
+  var words_value = document.getElementById("words").value;
   var svg = document.getElementsByTagName('svg')[0];
   function svgDataURL(svg) {
     var svgAsXML = (new XMLSerializer).serializeToString(svg);
@@ -150,7 +152,7 @@ function downloadSVG() {
   var dl = document.createElement("a");
   document.body.appendChild(dl);
   dl.setAttribute("href", dataURL);
-  dl.setAttribute("download", "word-cloud.svg");
+  dl.setAttribute("download", words_value + ".svg");
   dl.click();
 }
 
