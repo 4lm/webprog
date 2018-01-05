@@ -139,6 +139,11 @@ function downloadSVG() {
   dl.click();
 }
 
+function downloadPNG() {
+  var words_value = document.getElementById("words").value;
+  saveSvgAsPng( document.getElementsByTagName('svg')[0],  words_value + ".png");
+}
+
 document.getElementById("button").addEventListener("click", function () {
   var bool_words = document.getElementById("words").checkValidity();
   if (bool_words) {
@@ -173,5 +178,17 @@ document.getElementById("download-svg").addEventListener("click", function () {
   }
   if (bool_words) {
     downloadSVG();
+  }
+});
+
+document.getElementById("download-png").addEventListener("click", function () {
+  var bool_words = document.getElementById("words").checkValidity();
+  if (bool_words) {
+    document.getElementById("words").style.backgroundColor = "#ffffff";
+  } else {
+    document.getElementById("words").style.backgroundColor = "#fa8072";
+  }
+  if (bool_words) {
+    downloadPNG();
   }
 });

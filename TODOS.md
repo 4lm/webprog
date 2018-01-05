@@ -9,3 +9,4 @@ ToDo: Licenses to credit:
 - d3, BSD-3-Clause: https://github.com/d3/d3
 - d3-cloud, BSD-3-Clause: https://github.com/jasondavies/d3-cloud
 - Example, Font in SVG: https://github.com/marians/test-webfonts-in-svg
+- saveSvgAsPng, MIT: https://github.com/exupero/saveSvgAsPng
