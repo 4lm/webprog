@@ -70,7 +70,7 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
           words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
         }
       }
-      
+
       words = words.slice(0, parseInt(max_words));
       score = score.slice(0, parseInt(max_words));
       // Define layout
@@ -82,7 +82,7 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
         }))
         .padding(parseInt(padding))
         .rotate(() => {
-          var angle = 0; 
+          var angle = 0;
           switch (parseInt(orientations)) {
             case 1:
               // angle is 0
@@ -97,7 +97,7 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
               angle = (~~(Math.random() * 2) + ~~(Math.random() * 2) + ~~(Math.random() * 2)) * 45;
               break;
             default:
-              // angle is 0
+            // angle is 0
           }
           return angle;
         })
@@ -133,6 +133,20 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
     });
 }
 
+function downloadSVG() {
+  var svg = document.getElementsByTagName('svg')[0];
+  function svgDataURL(svg) {
+    var svgAsXML = (new XMLSerializer).serializeToString(svg);
+    return "data:image/svg+xml," + encodeURIComponent(svgAsXML);
+  }
+  var dataURL = svgDataURL(svg);
+  var dl = document.createElement("a");
+  document.body.appendChild(dl);
+  dl.setAttribute("href", dataURL);
+  dl.setAttribute("download", "word-cloud.svg");
+  dl.click();
+}
+
 document.getElementById("button").addEventListener("click", function () {
   var bool_words = document.getElementById("words").checkValidity();
   if (bool_words) {
@@ -155,6 +169,18 @@ document.getElementById("button").addEventListener("click", function () {
     var canvas_format = document.getElementById("canvas_format").value;
     words = [];
     fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format);
+  }
+});
+
+document.getElementById("download-svg").addEventListener("click", function () {
+  var bool_words = document.getElementById("words").checkValidity();
+  if (bool_words) {
+    document.getElementById("words").style.backgroundColor = "#ffffff";
+  } else {
+    document.getElementById("words").style.backgroundColor = "#fa8072";
+  }
+  if (bool_words) {
+    downloadSVG();
   }
 });
 
