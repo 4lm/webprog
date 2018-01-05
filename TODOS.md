@@ -10,3 +10,4 @@ ToDo: Licenses to credit:
 - Fetch API code, Apache 2.0: https://github.com/google-developer-training/pwa-training-labs
 - d3, BSD-3-Clause: https://github.com/d3/d3
 - d3-cloud, BSD-3-Clause: https://github.com/jasondavies/d3-cloud
+- Example, Font in SVG: https://github.com/marians/test-webfonts-in-svg

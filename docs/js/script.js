@@ -109,9 +109,16 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
       // Draw
       function draw(words) {
         document.getElementById("cloud").innerHTML = "";
-        d3.select("#cloud").append("svg")
+        d3.select("#cloud")
+          .append("svg")
           .attr("width", layout.size()[0])
           .attr("height", layout.size()[1])
+        d3.select("svg")
+          .append("defs")
+          .append("style")
+          .attr("type", "text/css")
+          .text("@import url('https://fonts.googleapis.com/css?family=" + font.replace(/ /g,"+") + "');")
+        d3.select("svg")
           .append("g")
           .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
           .selectAll("text")
