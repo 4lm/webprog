@@ -173,7 +173,7 @@ document.getElementById("button").addEventListener("click", function () {
     var max_words = document.getElementById("max_words").value;
     var orientations = document.querySelector('input[name="orientations"]:checked').value;
     var padding = document.getElementById("padding").value;
-    var font = document.getElementById("font").value;
+    var font = document.querySelector('input[name="fonts"]:checked').value;
     var color_scheme = document.getElementById("color_scheme").value;
     var canvas_format = document.getElementById("canvas_format").value;
     fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format);

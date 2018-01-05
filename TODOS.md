@@ -1,6 +1,5 @@
 Bugs/ToDos:
 
-- Sometimes padding doesn't work properly
 - If no SVG present, error if user tries to download SVG
 
 ToDo: Licenses to credit:
