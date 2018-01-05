@@ -176,7 +176,6 @@ document.getElementById("button").addEventListener("click", function () {
     var font = document.getElementById("font").value;
     var color_scheme = document.getElementById("color_scheme").value;
     var canvas_format = document.getElementById("canvas_format").value;
-    words = [];
     fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format);
   }
 });
