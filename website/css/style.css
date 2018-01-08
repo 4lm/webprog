@@ -1,0 +1,101 @@
+#navi-hintergrund {
+  background-color:#c7cecf;
+  opacity: 0.9;
+}
+
+.navbar .navbar-nav > li > a:hover {
+   background-color: #c7cecf;
+   color: black;
+}
+
+.navbar-nav {
+  background-color: white;
+  border-radius: 8px;
+  font-size: large;
+  font-weight: bold;
+  font-family: 'Signika', sans-serif;
+}
+
+.nav-link {
+  color: black;
+}
+
+.abstand {
+  padding: 5%;
+}
+
+.btn {
+  background: #7b7483;
+  border: none;
+}
+
+.btn:hover {
+  background: #89aadd;
+}
+
+.btn.btn-primary.active {
+  background: #1b1b1b !important;
+}
+
+
+h1 {
+  font-family: 'Lobster', cursive;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h2, h3 {
+  font-family: 'Lobster', cursive;
+  border: solid;
+  opacity: 0.9;
+  color: #505353;
+}
+
+h3 {
+  padding: 25px;
+}
+
+.createFormular {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.home-section {
+  height: auto !important;
+  min-height: 100%;
+  overflow:hidden;
+  background: url(../images/example.jpg) no-repeat center;
+  background-size: contain;
+}
+
+.jumbotron {
+  background: transparent;
+}
+
+.jombo-text-back {
+  background: white;
+}
+
+#cloud {
+  overflow: hidden
+}
+
+.create-section {
+  background-color: #ede9e8;
+}
+.about-section {
+  background-color: #ababab;
+}
+.contact-section {
+  background-color: #cdd3d4;
+  background: url(../images/kontakt.png) no-repeat center;
+  background-size: cover;
+}
+.imprint-section {
+  background-color: #3d3d3d;
+  color: white;
+}
