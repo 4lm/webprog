@@ -26,6 +26,7 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
   var max = 0; // Variable for holding the max score value
   var divide = 1; // Divide factor, initiated with the value 1
   var counter = -1;
+  var layout;
   // Fetch from API
   fetch(proxyUrl + targetUrl)
     .then(blob => blob.json())
@@ -57,46 +58,69 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
 
       words = words.slice(0, parseInt(max_words));
       score = score.slice(0, parseInt(max_words));
-      // Define layout
-      var layout = d3.layout.cloud()
-        .size(canvas_format)
-        .words(words.map(function (word) {
-          counter++;
-          return { text: word, size: score[counter] / divide };
-        }))
-        .padding(parseInt(padding))
-        .rotate(() => {
-          var angle = 0;
-          switch (parseInt(orientations)) {
-            case 1:
+
+      // Define layout 
+      if (orientations == 5) {
+        layout = d3.layout.cloud()
+          .size(canvas_format)
+          .words(words.map(function (word) {
+            counter++;
+            return { text: word, size: score[counter] / divide };
+          }))
+          .padding(parseInt(padding))
+          .font(font)
+          .fontSize(d => d.size)
+          .on("end", draw);
+      } else {
+        layout = d3.layout.cloud()
+          .size(canvas_format)
+          .words(words.map(function (word) {
+            counter++;
+            return { text: word, size: score[counter] / divide };
+          }))
+          .padding(parseInt(padding))
+          .rotate(() => {
+            var angle = 0;
+            switch (parseInt(orientations)) {
+              case 1:
+                // angle is 0
+                break;
+              case 2:
+                angle = ~~(Math.random() * 2) * 90;
+                break;
+              case 3:
+                angle = (~~(Math.random() * 2) + ~~(Math.random() * 2)) * 45;
+                break;
+              case 4:
+                angle = (~~(Math.random() * 2) + ~~(Math.random() * 2) + ~~(Math.random() * 2)) * 45;
+                break;
+              default:
               // angle is 0
-              break;
-            case 2:
-              angle = ~~(Math.random() * 2) * 90;
-              break;
-            case 3:
-              angle = (~~(Math.random() * 2) + ~~(Math.random() * 2)) * 45;
-              break;
-            case 4:
-              angle = (~~(Math.random() * 2) + ~~(Math.random() * 2) + ~~(Math.random() * 2)) * 45;
-              break;
-            default:
-            // angle is 0
-          }
-          return angle;
-        })
-        .font(font)
-        .fontSize(d => d.size)
-        .on("end", draw);
+            }
+            return angle;
+          })
+          .font(font)
+          .fontSize(d => d.size)
+          .on("end", draw);
+      }
 
       layout.start();
       // Draw
       function draw(words) {
         document.getElementById("cloud").innerHTML = "";
+
         d3.select("#cloud")
           .append("svg")
           .attr("width", layout.size()[0])
-          .attr("height", layout.size()[1])
+          .attr("height", layout.size()[1]);
+
+        d3.select("svg")
+          .append("rect")
+          .attr("width", "100%")
+          .attr("height", "100%")
+          .attr("fill", document.getElementById("bg-color").value);
+
+        d3.select("svg")
           .append("g")
           .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
           .selectAll("text")
@@ -135,7 +159,7 @@ function downloadSVG() {
 
 function downloadPNG() {
   var words_value = document.getElementById("words").value;
-  saveSvgAsPng( document.getElementsByTagName('svg')[0],  words_value + ".png");
+  saveSvgAsPng(document.getElementsByTagName('svg')[0], words_value + ".png");
 }
 
 document.getElementById("button").addEventListener("click", function () {
