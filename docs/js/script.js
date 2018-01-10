@@ -1,5 +1,7 @@
+// Function fetches JSON from datamuse-API, gets all user arguments and draws SVG element
 function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format) {
 
+  // Choose color scheme
   switch (parseInt(color_scheme)) {
     case 1:
       var fill = d3.scale.category10();
@@ -17,7 +19,9 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
       var fill = d3.scale.category10();
   }
 
+  // Lowercase keywords
   words_value = words_value.toLowerCase();
+
   // Use of proxy server to add CORS to original API response
   var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   var targetUrl = 'https://api.datamuse.com/words?ml=' + words_value;
@@ -27,7 +31,8 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
   var divide = 1; // Divide factor, initiated with the value 1
   var counter = -1;
   var layout;
-  // Fetch from API
+
+  // Fetch from API witch Fetch-API
   fetch(proxyUrl + targetUrl)
     .then(blob => blob.json())
     .then(data => {
@@ -38,24 +43,21 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
           max = data[i].score;
         }
       }
+      // Normalize word weighting
       divide = max / 100;
       if (keyword == "true") {
         words.unshift(words_value);
         score.unshift(100000);
       }
-      console.log("Keyword: " + words[0]);
-      console.log("Max score: " + max);
-      console.log("Include keyword: " + keyword);
-      console.log("Max words: " + max_words);
-      console.log("Font: " + font);
-      console.log("Padding: " + padding);
 
+      // Capitalize words if true 
       if (capitalize == "true") {
         for (i = 0; i < words.length; i++) {
           words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
         }
       }
 
+      // Define max words
       words = words.slice(0, parseInt(max_words));
       score = score.slice(0, parseInt(max_words));
 
@@ -105,7 +107,8 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
       }
 
       layout.start();
-      // Draw
+
+      // d3 draw function, which is called at the end of d3-cloud layout declaration 
       function draw(words) {
         document.getElementById("cloud").innerHTML = "";
 
@@ -141,6 +144,7 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
     });
 }
 
+// Download SVG function
 function downloadSVG() {
   var words_value = document.getElementById("words").value;
   var svg = document.getElementsByTagName('svg')[0];
@@ -156,11 +160,13 @@ function downloadSVG() {
   dl.click();
 }
 
+// Download SVG function, calls saveSvgAsPng-js-lib
 function downloadPNG() {
   var words_value = document.getElementById("words").value;
   saveSvgAsPng(document.getElementsByTagName('svg')[0], words_value + ".png");
 }
 
+// Eventlistener for OK Button
 document.getElementById("button").addEventListener("click", function () {
   var bool_words = document.getElementById("words").checkValidity();
   if (bool_words) {
@@ -181,11 +187,11 @@ document.getElementById("button").addEventListener("click", function () {
     var font = document.querySelector('input[name="fonts"]:checked').value;
     var color_scheme = document.getElementById("color_scheme").value;
     var canvas_format = [document.getElementById("w").value, document.getElementById("h").value];
-    console.log(canvas_format);
     fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format);
   }
 });
 
+// Eventlistener for download SVG button
 document.getElementById("download-svg").addEventListener("click", function () {
   var bool_words = document.getElementById("words").checkValidity();
   if (bool_words) {
@@ -198,6 +204,7 @@ document.getElementById("download-svg").addEventListener("click", function () {
   }
 });
 
+// Eventlistener for download PNG button
 document.getElementById("download-png").addEventListener("click", function () {
   var bool_words = document.getElementById("words").checkValidity();
   if (bool_words) {
