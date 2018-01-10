@@ -110,9 +110,8 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
         document.getElementById("cloud").innerHTML = "";
 
         d3.select("#cloud")
-          .append("svg")
-          .attr("width", layout.size()[0])
-          .attr("height", layout.size()[1]);
+        .append("svg")
+        .attr("viewBox", "0, 0, " + layout.size()[0] + ", " + layout.size()[1]);
 
         d3.select("svg")
           .append("rect")
