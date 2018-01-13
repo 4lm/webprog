@@ -80,66 +80,107 @@
                         sein?</label><br/>
                     <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-primary active">
-                            <input type="radio" name="options" autocomplete="off" checked> Ja
+                            <input type="radio" name="keyword" value="true" autocomplete="off" checked> Ja
                         </label>
                         <label class="btn btn-primary">
-                            <input type="radio" name="options" autocomplete="off"> Nein
+                            <input type="radio" name="keyword" value="false" autocomplete="off"> Nein
                         </label>
                     </div>
                 </fieldset>
                 <div class="form-group">
-                    <label for="maximaleWörter" class="createFormular">Geben Sie die maximale Anzahl an Wörtern ein, die
+                    <label for="max_words" class="createFormular">Geben Sie die maximale Anzahl an Wörtern ein, die
                         die Word Cloud enthalten soll:</label>
-                    <input type="number" class="form-control" id="maximaleWörter" placeholder="Anzahl der Wörter">
+                    <input type="number" class="form-control" id="max_words" value="100" min="1" placeholder="Anzahl der Wörter">
                 </div>
                 <fieldset class="form-group">
                     <label class="createFormular">Anzahl der Ausrichtungen:</label><br/>
                     <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-primary active">
-                            <input type="radio" name="options" autocomplete="off" checked> 1
+                            <input type="radio" name="orientations" autocomplete="off"> 1
                         </label>
                         <label class="btn btn-primary">
-                            <input type="radio" name="options" autocomplete="off"> 2
+                            <input type="radio" name="orientations" autocomplete="off"> 2
                         </label>
                         <label class="btn btn-primary">
-                            <input type="radio" name="options" autocomplete="off"> 3
+                            <input type="radio" name="orientations" autocomplete="off"> 3
                         </label>
                         <label class="btn btn-primary">
-                            <input type="radio" name="options" autocomplete="off"> 4
+                            <input type="radio" name="orientations" autocomplete="off"> 4
                         </label>
                         <label class="btn btn-primary">
-                            <input type="radio" name="options" autocomplete="off"> 5
+                            <input type="radio" name="orientations" autocomplete="off" checked> 5
                         </label>
                     </div>
                 </fieldset>
                 <div class="form-group">
-                    <label for="schriftart" class="createFormular">Wählen Sie die gewünschte Schriftart aus:</label>
-                    <select class="form-control" id="schriftart">
-                        <option>Sans Serif</option>
-                        <option>Serif</option>
-                        <option>Display</option>
-                        <option>Handwriting</option>
-                        <option>Monospace</option>
+                    <label class="createFormular">Wählen Sie die gewünschte Schriftart aus:</label>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-primary" id="sans-serif">
+                            <input type="radio" name="fonts" value='sans-serif' checked="checked"> sans-serif
+                        </label>
+
+                        <label class="btn btn-primary" id="serif">
+                            <input type="radio" name="fonts" value='serif'> serif
+                        </label>
+
+                        <label class="btn btn-primary" id="cursive">
+                            <input type="radio" name="fonts" value='cursive'> cursive
+                        </label>
+
+                        <label class="btn btn-primary" id="fantasy">
+                            <input type="radio" name="fonts" value='fantasy'> fantasy
+                        </label>
+
+                        <label class="btn btn-primary" id="monospace">
+                            <input type="radio" name="fonts" value='monospace'> monospace
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="padding" class="createFormular">Padding between words:</label>
+                            <input type="number" class="form-control" id="padding" value="7" min="0">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="createFormular">Capitalize first letter of words:</label>
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-primary active">
+                                <input type="radio" name="capitalize" value="true" autocomplete="off"> Ja
+                            </label>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="capitalize" value="false" autocomplete="off" checked> Nein
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="color_scheme" class="createFormular">Wählen Sie das gewünschte Farbdesign aus:</label>
+                    <select class="form-control" id="color_scheme">
+                        <option value="1">Frühling</option>
+                        <option value="2">Sommer</option>
+                        <option value="3">Herbst</option>
+                        <option value="4">Winter</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="farbdesign" class="createFormular">Wählen Sie das gewünschte Farbdesign aus:</label>
-                    <select class="form-control" id="farbdesign">
-                        <option>Frühling</option>
-                        <option>Sommer</option>
-                        <option>Herbst</option>
-                        <option>Winter</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="format" class="createFormular">Wählen Sie das gewünschte Format für die Word Cloud
+                    <label class="createFormular">Wählen Sie das gewünschte Format für die Word Cloud
                         aus:</label>
-                    <select class="form-control" id="format">
-                        <option>4:3</option>
-                        <option>16:9</option>
-                        <option>1:1</option>
-                        <option>3:2</option>
-                    </select>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Select background color:</label>
+                            <input type="color" id="bg-color" class="" value="#ffffff">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Canvas width in px:</label>
+                            <input type="number" id="w" class="form-control" value="1200" min="0">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Canvas height in px:</label>
+                            <input type="number" class="form-control" id="h" value="800" min="0">
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group text-right">
                     <button
@@ -148,7 +189,11 @@
                             class="btn btn-primary btn-lg">
                         Absenden
                     </button>
+                    <button id="download-svg" class="btn btn-info btn-lg">Download SVG</button>
+
+                    <button id="download-png" class="btn btn-info btn-lg">Download PNG</button>
                 </div>
+
             </form>
         </div>
         <div class="col-md-7">
@@ -160,6 +205,7 @@
 </section>
 <section id="about" class="about-section container-fluid abstand">
     <h1>Über Uns</h1>
+
 </section>
 <section id="contact" class="contact-section container-fluid abstand">
     <h1>Kontaktieren Sie uns!</h1>
@@ -272,6 +318,7 @@
 <script src="../js/d3.min.js"></script>
 <script src="../js/d3.layout.cloud.js"></script>
 <script src="../js/create.js"></script>
+<script src="../js/saveSvgAsPng.js"></script>
 <script src="../js/main.js"></script>
 </body>
 </html>
