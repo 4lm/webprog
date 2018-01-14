@@ -57,7 +57,7 @@
                         <div class="col-sm-2"></div>
                         <div class="col-sm-8">
                             <h2 class="display-2 jombo-text-back">Syno Word Cloud</h2>
-                            <h3 class="learn jombo-text-back">Create your own syno word cloud!</h3>
+                           <a href="#create_word_cloud"><h3 class="learn jombo-text-back">Create your own syno word cloud!</h3></a>
                         </div>
                         <div class="col-sm-2"></div>
                     </div>
@@ -139,12 +139,12 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="padding" class="createFormular">Padding between words:</label>
+                            <label for="padding" class="createFormular">Abstand zwischen den Wörtern:</label>
                             <input type="number" class="form-control" id="padding" value="7" min="0">
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label class="createFormular">Capitalize first letter of words:</label>
+                        <label class="createFormular">Großbuchstabe am Anfang des Wortes:</label>
                         <div class="btn-group" data-toggle="buttons">
                             <label class="btn btn-primary active">
                                 <input type="radio" name="capitalize" value="true" autocomplete="off"> Ja
@@ -165,19 +165,19 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="createFormular">Wählen Sie das gewünschte Format für die Word Cloud
+                    <label class="createFormular">Wählen Sie die gewünschte Größe für die Word Cloud
                         aus:</label>
                     <div class="row">
                         <div class="col-md-4">
-                            <label>Select background color:</label>
+                            <label>Hintergrundfarbe:</label>
                             <input type="color" id="bg-color" class="" value="#ffffff">
                         </div>
                         <div class="col-md-4">
-                            <label>Canvas width in px:</label>
+                            <label>Bildbreite in Pixeln:</label>
                             <input type="number" id="w" class="form-control" value="1200" min="0">
                         </div>
                         <div class="col-md-4">
-                            <label>Canvas height in px:</label>
+                            <label>Bildhöhe in Pixeln:</label>
                             <input type="number" class="form-control" id="h" value="800" min="0">
                         </div>
                     </div>
@@ -205,7 +205,24 @@
 </section>
 <section id="about" class="about-section container-fluid abstand">
     <h1>Über Uns</h1>
-
+    <div class="row">
+    <div class="col-md-4">
+        <h4>Alexis Michaltsis</h4>
+        <h5>3 Fachsemester</h5>
+       <p>Soziologe, Filmtechniker und seit 3 Semestern leidenschaftlicher Student der Medieninformatik mit einem
+        leichten Hang zu Programmiersprachen mit geschweiften Klammern.</p>
+    </div>
+    <div class="col-md-4">
+        <h4>Jana Passehl</h4>
+        <h5>3 Fachsemester</h5>
+        <p>Gestalterin, Fotografin und seit 3 Semestern Studentin der Medieninformatik in Brandenburg mit einer leichten Neurose zu Sternengeschichten.</p>
+    </div>
+    <div class="col-md-4">
+        <h4>David Gohlke</h4>
+        <h5>3 Fachsemester</h5>
+        <p>Tastenjockey und Maus-Schubser von Beruf und seit 3 Semestern eigentragener Student der Medieninformatik, der das Chaos beherrscht oder es zumindest versucht.</p>
+    </div>
+    </div>
 </section>
 <section id="contact" class="contact-section container-fluid abstand">
     <h1>Kontaktieren Sie uns!</h1>
@@ -247,26 +264,27 @@
 </section>
 <section id="imprint" class="imprint-section container-fluid abstand">
     <div class='impressum'>
+        <div class="row">
+            <div class="col-md-9">
         <h1>Impressum</h1>
         <p>Angaben gemäß § 5 TMG</p>
-        <p>Max Muster <br>
-            Musterweg<br>
-            12345 Musterstadt <br>
+        <p>Alexis Michaltsis <br>
+            Karl-Marx-Str. 282 <br>
+            12057 Berlin <br>
         </p>
         <p><strong>Vertreten durch: </strong><br>
-            Max Muster<br>
+            Alexis Michaltsis<br>
         </p>
         <p><strong>Kontakt:</strong> <br>
-            Telefon: 01234-789456<br>
-            Fax: 1234-56789<br>
-            E-Mail: <a href='mailto:max@muster.de'>max@muster.de</a><br/></p>
-        <p><strong>Umsatzsteuer-ID: </strong> <br>
-            Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz: Musterustid.<br><br>
-            <strong>Wirtschafts-ID: </strong><br>
-            Musterwirtschaftsid<br>
+            Eine Kontaktaufnahme ist nur auf postalischem Weg möglich.<br>
         </p>
-        <p><strong>Aufsichtsbehörde:</strong><br>
-            Musteraufsicht Musterstadt<br></p>
+            </div>
+            <div class="col-md-3">
+                <div id="paragraph">§</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
         <p><strong>Haftungsausschluss: </strong><br><br><strong>Haftung für Inhalte</strong><br><br>
             Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und
             Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7
@@ -308,6 +326,8 @@
         </p><br>
         Website Impressum erstellt durch <a href="http://www.impressum-generator.de">impressum-generator.de</a> von der
         <a href="http://www.kanzlei-hasselbach.de/" rel="nofollow">Kanzlei Hasselbach</a>
+        </div>
+        </div>
     </div>
 </section>
 <!-- jQuery first, then Tether, then Bootstrap JS. then my.js -->
