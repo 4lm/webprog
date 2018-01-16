@@ -32,16 +32,16 @@
                                 <a class="nav-link" href="#home">home</a>
                             </li>
                             <li class="nav-item page-scroll">
-                                <a class="nav-link" href="#create_word_cloud">gestalte word cloud</a>
+                                <a class="nav-link" href="#create_word_cloud">create word cloud</a>
                             </li>
                             <li class="nav-item page-scroll">
-                                <a class="nav-link" href="#about">über uns</a>
+                                <a class="nav-link" href="#about">about</a>
                             </li>
                             <li class="nav-item page-scroll">
-                                <a class="nav-link" href="#contact">kontakt</a>
+                                <a class="nav-link" href="#contact">contact</a>
                             </li>
                             <li class="nav-item page-scroll">
-                                <a class="nav-link" href="#imprint">impressum</a>
+                                <a class="nav-link" href="#imprint">imprint</a>
                             </li>
                         </ul>
                     </div>
@@ -70,30 +70,28 @@
     <div class="row">
         <div class="col-md-5">
             <form>
-                <h1>Gestalten Sie Ihre Syno Word Cloud!</h1>
+                <h1>Create your own Syno Word Cloud!</h1>
                 <div class="form-group">
-                    <label for="words" class="createFormular">Fügen Sie ein Wort ein:</label>
-                    <input type="text" class="form-control" id="words" placeholder="Wort einfügen">
+                    <label for="words" class="createFormular">Fill in a word:</label>
+                    <input type="text" class="form-control" id="words" placeholder="Insert word">
                 </div>
                 <fieldset class="form-group">
-                    <label class="createFormular">Soll ihr ausgewähltes Schlüsselwort in der Word Cloud enthalten
-                        sein?</label><br/>
+                    <label class="createFormular">Should your selected keyword be contained in the Word cloud?</label><br/>
                     <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-primary active">
-                            <input type="radio" name="keyword" value="true" autocomplete="off" checked> Ja
+                            <input type="radio" name="keyword" value="true" autocomplete="off" checked> Yes
                         </label>
                         <label class="btn btn-primary">
-                            <input type="radio" name="keyword" value="false" autocomplete="off"> Nein
+                            <input type="radio" name="keyword" value="false" autocomplete="off"> No
                         </label>
                     </div>
                 </fieldset>
                 <div class="form-group">
-                    <label for="max_words" class="createFormular">Geben Sie die maximale Anzahl an Wörtern ein, die
-                        die Word Cloud enthalten soll:</label>
-                    <input type="number" class="form-control" id="max_words" value="100" min="1" placeholder="Anzahl der Wörter">
+                    <label for="max_words" class="createFormular">Enter the maximum number of words the Word Cloud should contain:</label>
+                    <input type="number" class="form-control" id="max_words" value="100" min="1" placeholder="Number of words">
                 </div>
                 <fieldset class="form-group">
-                    <label class="createFormular">Anzahl der Ausrichtungen:</label><br/>
+                    <label class="createFormular">Number of orientations:</label><br/>
                     <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-primary active">
                             <input type="radio" name="orientations" autocomplete="off"> 1
@@ -113,7 +111,7 @@
                     </div>
                 </fieldset>
                 <div class="form-group">
-                    <label class="createFormular">Wählen Sie die gewünschte Schriftart aus:</label>
+                    <label class="createFormular">Select the font:</label>
                     <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-primary" id="sans-serif">
                             <input type="radio" name="fonts" value='sans-serif' checked="checked"> sans-serif
@@ -139,45 +137,44 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="padding" class="createFormular">Abstand zwischen den Wörtern:</label>
+                            <label for="padding" class="createFormular">Padding between Words</label>
                             <input type="number" class="form-control" id="padding" value="7" min="0">
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label class="createFormular">Großbuchstabe am Anfang des Wortes:</label>
+                        <label class="createFormular">Capital letter at the beginning of the word:</label>
                         <div class="btn-group" data-toggle="buttons">
                             <label class="btn btn-primary active">
-                                <input type="radio" name="capitalize" value="true" autocomplete="off"> Ja
+                                <input type="radio" name="capitalize" value="true" autocomplete="off"> Yes
                             </label>
                             <label class="btn btn-primary">
-                                <input type="radio" name="capitalize" value="false" autocomplete="off" checked> Nein
+                                <input type="radio" name="capitalize" value="false" autocomplete="off" checked> No
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="color_scheme" class="createFormular">Wählen Sie das gewünschte Farbdesign aus:</label>
+                    <label for="color_scheme" class="createFormular">Select the color design:</label>
                     <select class="form-control" id="color_scheme">
-                        <option value="1">Frühling</option>
-                        <option value="2">Sommer</option>
-                        <option value="3">Herbst</option>
+                        <option value="1">Spring</option>
+                        <option value="2">Summer</option>
+                        <option value="3">Autumn</option>
                         <option value="4">Winter</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="createFormular">Wählen Sie die gewünschte Größe für die Word Cloud
-                        aus:</label>
+                    <label class="createFormular">Select the desired size for the Word cloud :</label>
                     <div class="row">
                         <div class="col-md-4">
-                            <label>Hintergrundfarbe:</label>
+                            <label>background color::</label>
                             <input type="color" id="bg-color" class="" value="#ffffff">
                         </div>
                         <div class="col-md-4">
-                            <label>Bildbreite in Pixeln:</label>
+                            <label>Image width in pixels:</label>
                             <input type="number" id="w" class="form-control" value="1200" min="0">
                         </div>
                         <div class="col-md-4">
-                            <label>Bildhöhe in Pixeln:</label>
+                            <label>Image height in pixels:</label>
                             <input type="number" class="form-control" id="h" value="800" min="0">
                         </div>
                     </div>
@@ -187,7 +184,7 @@
                             type="submit"
                             id="button"
                             class="btn btn-primary btn-lg">
-                        Absenden
+                        Submit
                     </button>
                     <button id="download-svg" class="btn btn-info btn-lg">Download SVG</button>
 
@@ -204,58 +201,63 @@
     </div>
 </section>
 <section id="about" class="about-section container-fluid abstand">
-    <h1>Über Uns</h1>
+    <h1>about us</h1>
+    <p>We are a small group of students of the Brandenburg University of Technology. Our group consists of the students:</p>
     <div class="row">
     <div class="col-md-4">
+        <p class="text-center"><img src="../images/alexis.jpg" alt="Alexis Michaltsis" class="rounded-circle"></p>
         <h4>Alexis Michaltsis</h4>
-        <h5>3 Fachsemester</h5>
-       <p>Soziologe, Filmtechniker und seit 3 Semestern leidenschaftlicher Student der Medieninformatik mit einem
-        leichten Hang zu Programmiersprachen mit geschweiften Klammern.</p>
+        <h5>3 Semester</h5>
+       <p>Sociologist, film technician and since 3 semesters a passionate student of media informatics with a slight inclination to programming languages with curly brackets.</p>
     </div>
     <div class="col-md-4">
+        <p class="text-center"><img src="../images/jana.jpg" alt="Alexis Michaltsis" class="rounded-circle"></p>
         <h4>Jana Passehl</h4>
-        <h5>3 Fachsemester</h5>
-        <p>Gestalterin, Fotografin und seit 3 Semestern Studentin der Medieninformatik in Brandenburg mit einer leichten Neurose zu Sternengeschichten.</p>
+        <h5>3 Semester</h5>
+        <p>Designer, photographer and since 3 semesters student of media informatics with a slight neurosis to star stories.</p>
     </div>
     <div class="col-md-4">
+        <p class="text-center"><img src="../images/david.jpeg" alt="Alexis Michaltsis" class="rounded-circle"></p>
         <h4>David Gohlke</h4>
-        <h5>3 Fachsemester</h5>
-        <p>Tastenjockey und Maus-Schubser von Beruf und seit 3 Semestern eigentragener Student der Medieninformatik, der das Chaos beherrscht oder es zumindest versucht.</p>
+        <h5>3 Semester</h5>
+        <p>Keboard jockey and mouse pusher by profession and since 3 semesters a student of media informatics, who masters the chaos or at least tries to do it.</p>
     </div>
     </div>
+    <hr>
+    <p>This website was created as the final project for the "Web Programmierung" course, which was led by Professor Dr. Thomas Preuss.</p>
 </section>
 <section id="contact" class="contact-section container-fluid abstand">
-    <h1>Kontaktieren Sie uns!</h1>
+    <h1>Contact us!</h1>
     <div class="row">
         <div class="col-md-5">
             <div id="erfolgsmeldung"></div>
             <form role="form" id="frmContact"> <!-- Formular Beginn -->
                 <div class="form-group" id="frmGrpVorname">
-                    <label for="vorname" class="control-label createFormular">Vorname:</label>
+                    <label for="vorname" class="control-label createFormular">First name:</label>
                     <input type="text" id="vorname" class="form-control"
-                           placeholder="Ihr Vorname">
+                           placeholder="Your first name">
                 </div>
                 <div class="form-group" id="frmGrpNachname">
-                    <label for="nachname" class="control-label createFormular">Nachname:</label>
+                    <label for="nachname" class="control-label createFormular">Last name:</label>
                     <input type="text" id="nachname" class="form-control"
-                           placeholder="Ihr Nachname">
+                           placeholder="Your last name">
                 </div>
                 <div class="form-group" id="frmGrpMail">
                     <label for="mail" class="control-label createFormular">Mail:</label>
-                    <input type="email" id="mail" class="form-control" placeholder="Ihre Mailadresse">
+                    <input type="email" id="mail" class="form-control" placeholder="Your mail address">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.
                     </small>
                 </div>
                 <div class="form-group" id="frmGrpNachricht">
-                    <label for="nachricht" class="control-label createFormular">Ihre Nachricht:</label>
-                    <textarea id="nachricht" class="form-control" rows="4" placeholder="Ihre Nachricht"></textarea>
+                    <label for="nachricht" class="control-label createFormular">Your message:</label>
+                    <textarea id="nachricht" class="form-control" rows="4" placeholder="Your message"></textarea>
                 </div>
                 <div class="form-group text-right">
                     <button
                             type="submit"
                             id="submitBtn"
                             class="btn btn-primary btn-lg">
-                        Absenden
+                       Submit
                     </button>
                 </div>
             </form> <!-- Formular Ende -->
@@ -266,7 +268,7 @@
     <div class='impressum'>
         <div class="row">
             <div class="col-md-9">
-        <h1>Impressum</h1>
+        <h1>imprint</h1>
         <p>Angaben gemäß § 5 TMG</p>
         <p>Alexis Michaltsis <br>
             Karl-Marx-Str. 282 <br>
