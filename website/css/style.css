@@ -111,3 +111,30 @@ h3 {
 .fontSelector {
   flex-wrap: wrap;
 }
+
+.fontSelector label {
+  margin-top: 5px;
+}
+
+#submitButton, #download-svg, #download-png {
+    margin-top: 5px;
+}
+
+
+/* Don't edit below this line */
+
+#sans-serif {
+  font-family: sans-serif;
+}
+#serif {
+  font-family: serif;
+}
+#cursive {
+  font-family: cursive;
+}
+#fantasy {
+  font-family: fantasy;
+}
+#monospace {
+  font-family: monospace;
+}
