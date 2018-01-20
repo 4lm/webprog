@@ -67,7 +67,7 @@
                 <h1>Create your own Syno Word Cloud!</h1>
                 <div class="form-group">
                     <label for="words" class="createFormular">Fill in a word:</label>
-                    <input type="text" class="form-control" id="words" placeholder="Insert word">
+                    <input type="text" class="form-control" id="words" placeholder="Insert word" required>
                 </div>
                 <fieldset class="form-group">
                     <label class="createFormular">Should your selected keyword be contained in the Word cloud?</label><br/>
@@ -107,21 +107,19 @@
                 <div class="form-group">
                     <label class="createFormular">Select the font:</label>
                     <div class="btn-group fontSelector">
-                        <label class="btn btn-primary active" id="sans-serif">
+                        <label class="btn btn-primary active sans-serif" id="sans-serif">
                             <input type="radio" name="fonts" value='sans-serif' checked="checked"> sans-serif
                         </label>
-                        <label class="btn btn-primary" id="serif">
+                        <label class="btn btn-primary serif" id="serif">
                             <input type="radio" name="fonts" value='serif'> serif
                         </label>
-                        <label class="btn btn-primary" id="cursive">
+                        <label class="btn btn-primary cursive" id="cursive">
                             <input type="radio" name="fonts" value='cursive'> cursive
                         </label>
-
-                        <label class="btn btn-primary" id="fantasy">
+                        <label class="btn btn-primary fantasy" id="fantasy">
                             <input type="radio" name="fonts" value='fantasy'> fantasy
                         </label>
-
-                        <label class="btn btn-primary" id="monospace">
+                        <label class="btn btn-primary monospace" id="monospace">
                             <input type="radio" name="fonts" value='monospace'> monospace
                         </label>
                     </div>
