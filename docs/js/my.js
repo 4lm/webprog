@@ -59,9 +59,9 @@ $( '#frmContact').submit( function() {
          }
 
          if(formControl) {
-           $ajax({
+           $.ajax({
              type: 'POST',
-             url: 'php/absenden.php',
+             url: 'https://formspree.io/7262de68-ae33-4758-b3a3-1283c824f2a6@michaltsis.net',
              data: {vorname:vorname, nachname:nachname, mail:mail, nachricht:nachricht}
            }).done(function(message) {
              var erfolgsmeldung = $('#erfolgsmeldung');
