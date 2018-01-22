@@ -177,7 +177,7 @@ document.getElementById("submitButton").addEventListener("click", function (e) {
     }
     if (bool_words) {
         document.getElementById("cloud").innerHTML = "";
-        document.getElementById("cloud").innerHTML = "<img src=\"../images/ajax-loader.gif\">";
+        document.getElementById("cloud").innerHTML = "<img src=\"images/ajax-loader.gif\">";
 
         var words_value = document.getElementById("words").value;
         var keyword = document.querySelector('input[name="keyword"]:checked').value;
