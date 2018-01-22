@@ -76,7 +76,7 @@ h3 {
   height: auto !important;
   min-height: 100%;
   overflow:hidden;
-  background: url(images/word.png) no-repeat center ;
+  background: url(../images/word.png) no-repeat center ;
   background-size: contain;
 }
 
@@ -100,7 +100,7 @@ h3 {
 }
 .contact-section {
   background-color: #cdd3d4;
-  background: url(images/kontaktverlauf.jpg) no-repeat center;
+  background: url(../images/kontaktverlauf.jpg) no-repeat center;
   background-size: cover;
 }
 .imprint-section {
