@@ -71,7 +71,7 @@
                 </div>
                 <fieldset class="form-group">
                     <label class="createFormular">Should your selected keyword be contained in the Word cloud?</label><br/>
-                    <div class="btn-group">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-primary active">
                             <input type="radio" name="keyword" value="true" autocomplete="off" checked> Yes
                         </label>
@@ -86,7 +86,7 @@
                 </div>
                 <fieldset class="form-group">
                     <label class="createFormular">Number of orientations:</label><br/>
-                    <div class="btn-group">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-primary">
                             <input type="radio" name="orientations" value="1" autocomplete="off"> 1
                         </label>
@@ -106,9 +106,9 @@
                 </fieldset>
                 <div class="form-group">
                     <label class="createFormular">Select the font:</label>
-                    <div class="btn-group fontSelector">
+                    <div class="btn-group btn-group-toggle fontSelector" data-toggle="buttons">
                         <label class="btn btn-primary active sans-serif" id="sans-serif">
-                            <input type="radio" name="fonts" value='sans-serif' checked="checked"> sans-serif
+                            <input type="radio" name="fonts" value='sans-serif' checked> sans-serif
                         </label>
                         <label class="btn btn-primary serif" id="serif">
                             <input type="radio" name="fonts" value='serif'> serif
@@ -133,7 +133,7 @@
                     </div>
                     <div class="col-md-6">
                         <label class="createFormular">Capital letter at the beginning of the word:</label>
-                        <div class="btn-group">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-primary active">
                                 <input type="radio" name="capitalize" value="true" autocomplete="off" checked> Yes
                             </label>

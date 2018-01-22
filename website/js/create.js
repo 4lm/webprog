@@ -167,7 +167,7 @@ function downloadPNG() {
 }
 
 // Eventlistener for OK Button
-document.getElementById("button").addEventListener("click", function (e) {
+document.getElementById("submitButton").addEventListener("click", function (e) {
     e.preventDefault();
     var bool_words = document.getElementById("words").checkValidity();
     if (bool_words) {
