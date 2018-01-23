@@ -12,4 +12,4 @@ We are a small group of students at the "Technische Hochschule Brandenburg - Uni
 - Jana Passehl
 - David Gohlke
 
-This website was created as the final project for the "Web-Programmierung" course (winter semester 2017/18), led by Professor Dr. Thomas Preuss.
+This website was created as the final project for the "Web-Programmierung" course (winter semester 2017/18), led by Prof. Dr. Thomas Preuss.
