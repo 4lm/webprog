@@ -4,11 +4,13 @@
   opacity: 0.9;
 }
 
+/* Hover of navbar */
 .navbar .navbar-nav > li > a:hover {
    background-color: #c7cecf;
    color: black;
 }
 
+/* Settings of navbar */
 .navbar-nav {
   background-color: white;
   border-radius: 8px;
@@ -17,11 +19,13 @@
   font-family: 'Signika', sans-serif;
 }
 
+/* Navbar links (text) settings */
 .nav-link {
   color: black !important;
   padding-left: 10px !important;
 }
 
+/* Setting for Syno Word Cloud on navbar */
 #logo-title-swc {
   font-family: 'Lobster', cursive;
   font-size: 2.5rem;
@@ -34,12 +38,22 @@
   border: none;
 }
 
-.btn:hover {
-  background: #89aadd;
-}
-
 .btn.btn-primary.active {
   background: #1b1b1b !important;
+}
+
+#submitButton {
+  margin-top: 5px;
+}
+
+#download-svg, #download-png {
+    margin-top: 5px;
+    display: none;
+}
+
+/* Hover setting of button */
+.btn:hover {
+  background: #89aadd;
 }
 
 /* General settings */
@@ -47,18 +61,21 @@
   padding: 5%;
 }
 
-h1 {
-  font-family: 'Lobster', cursive;
-}
-
+/* html and body tag settings */
 html, body {
   height: 100%;
   width: 100%;
   font-family: 'Ubuntu', sans-serif;
 }
 
+/* Setting of Paragraph symbol in imprint */
 #paragraph {
   font-size: 200px;
+}
+
+/* header settings */
+h1 {
+  font-family: 'Lobster', cursive;
 }
 
 h2, h3 {
@@ -75,6 +92,8 @@ h3 {
 #right {
   float: right;
 }
+
+/* Settings of sections on website (welcome page, form, jumbotron, create etc.)*/
 .createFormular {
   font-size: 17px;
   font-weight: bold;
@@ -122,15 +141,6 @@ h3 {
 
 .fontSelector label {
   margin-top: 5px;
-}
-
-#submitButton {
-  margin-top: 5px;
-}
-
-#download-svg, #download-png {
-    margin-top: 5px;
-    display: none;
 }
 
 /* Load font-families of Fonts to choose from (system fonts) */
