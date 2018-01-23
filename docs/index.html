@@ -8,13 +8,16 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Signika|Lobster" rel="stylesheet">
-    <!-- Mein CSS -->
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <!-- CSS -->
+    <link rel='stylesheet' href='css/spectrum.css' />
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" role="navigation">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <section id="home" class="home-section">
         <div class="container-fluid">
             <nav class="navbar navbar-light navbar-expand-md fixed-top" id="navi-hintergrund">
@@ -22,7 +25,7 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <h1>Syno Word Cloud</h1>
+                <span id="logo-title-swc">Syno Word Cloud</span>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav  ml-auto">
                         <li class="nav-item page-scroll">
@@ -78,10 +81,10 @@
                         <br/>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-primary active">
-                                <input type="radio" name="keyword" value="true" autocomplete="off" checked> Yes
+                                <input type="radio" name="keyword" value="true" checked> Yes
                             </label>
                             <label class="btn btn-primary">
-                                <input type="radio" name="keyword" value="false" autocomplete="off"> No
+                                <input type="radio" name="keyword" value="false"> No
                             </label>
                         </div>
                     </fieldset>
@@ -94,19 +97,19 @@
                         <br/>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-primary">
-                                <input type="radio" name="orientations" value="1" autocomplete="off"> 1
+                                <input type="radio" name="orientations" value="1"> 1
                             </label>
                             <label class="btn btn-primary">
-                                <input type="radio" name="orientations" value="2" autocomplete="off"> 2
+                                <input type="radio" name="orientations" value="2"> 2
                             </label>
                             <label class="btn btn-primary">
-                                <input type="radio" name="orientations" value="3" autocomplete="off"> 3
+                                <input type="radio" name="orientations" value="3"> 3
                             </label>
                             <label class="btn btn-primary">
-                                <input type="radio" name="orientations" value="4" autocomplete="off"> 4
+                                <input type="radio" name="orientations" value="4"> 4
                             </label>
                             <label class="btn btn-primary active">
-                                <input type="radio" name="orientations" value="5" autocomplete="off" checked> &infin;
+                                <input type="radio" name="orientations" value="5" checked> &infin;
                             </label>
                         </div>
                     </fieldset>
@@ -141,10 +144,10 @@
                             <label class="createFormular">Capital letter at the beginning of the word:</label>
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                 <label class="btn btn-primary active">
-                                    <input type="radio" name="capitalize" value="true" autocomplete="off" checked> Yes
+                                    <input type="radio" name="capitalize" value="true" checked> Yes
                                 </label>
                                 <label class="btn btn-primary">
-                                    <input type="radio" name="capitalize" value="false" autocomplete="off"> No
+                                    <input type="radio" name="capitalize" value="false"> No
                                 </label>
                             </div>
                         </div>
@@ -162,8 +165,8 @@
                         <label class="createFormular">Select the desired size for the word cloud:</label>
                         <div class="row">
                             <div class="col-md-4">
-                                <label>Background color::</label>
-                                <input type="color" id="bg-color" class="" value="#ffffff">
+                                <label>Background color:</label>
+                                <input type="text" id="bg-color">
                             </div>
                             <div class="col-md-4">
                                 <label>Image width in pixel:</label>
@@ -196,7 +199,8 @@
     </section>
     <section id="about" class="about-section container-fluid abstand">
         <h1>About us</h1>
-        <p>We are a small group of students at the "Technische Hochschule Brandenburg - Univerisity of Applied Sciences", in the state of Brandenburg, Germany. Our group consists of:</p>
+        <p>We are a small group of students at the "Technische Hochschule Brandenburg - Univerisity of Applied Sciences", in
+            the state of Brandenburg, Germany. Our group consists of:</p>
         <div class="row">
             <div class="col-md-4">
                 <p class="text-center">
@@ -213,7 +217,9 @@
                 </p>
                 <h4>Jana Passehl</h4>
                 <h5>3 Semester</h5>
-                <p>Designer, photographer and since 3 semesters student of media informatics with a slight neurosis to star stories.</p>
+                <p>Designer, photographer and since 3 semesters student of media informatics with a slight neurosis to star
+                    stories.
+                </p>
             </div>
             <div class="col-md-4">
                 <p class="text-center">
@@ -226,14 +232,15 @@
             </div>
         </div>
         <hr>
-        <p>This website was created as the final project for the "Web-Programmierung" course (winter semester 2017/18), led by Professor Dr. Thomas Preuss.</p>
+        <p>This website was created as the final project for the "Web-Programmierung" course (winter semester 2017/18), led
+            by Professor Dr. Thomas Preuss.</p>
     </section>
     <section id="contact" class="contact-section container-fluid abstand">
         <h1>Contact us!</h1>
         <div class="row">
             <div class="col-md-5">
                 <div id="erfolgsmeldung"></div>
-                <form role="form" id="frmContact">
+                <form id="frmContact">
                     <!-- Formular Beginn -->
                     <div class="form-group" id="frmGrpVorname">
                         <label for="vorname" class="control-label createFormular">First name:</label>
@@ -284,7 +291,7 @@
                     <div id="paragraph">§</div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" lang="de">
                 <div class="col-md-10">
                     <p>
                         <strong>Haftungsausschluss: </strong>
@@ -355,6 +362,7 @@
     <script src="js/d3.min.js"></script>
     <script src="js/d3.layout.cloud.js"></script>
     <script src="js/saveSvgAsPng.js"></script>
+    <script src="js/spectrum.js"></script>
     <!-- Custom JavaScript -->
     <script src="js/script.js"></script>
 </body>

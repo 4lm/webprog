@@ -119,7 +119,7 @@ function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientati
                     .append("rect")
                     .attr("width", "100%")
                     .attr("height", "100%")
-                    .attr("fill", document.getElementById("bg-color").value);
+                    .attr("fill", $("#bg-color").spectrum('get').toHexString());
 
                 d3.select("svg")
                     .append("g")
@@ -169,7 +169,7 @@ function downloadPNG() {
     saveSvgAsPng(document.getElementsByTagName('svg')[0], words_value + ".png");
 }
 
-// Eventlistener for OK Button
+// Eventlistener for Submit Button
 document.getElementById("submitButton").addEventListener("click", function (e) {
     e.preventDefault();
     var bool_words = document.getElementById("words").checkValidity();
@@ -302,4 +302,10 @@ $('#frmContact').submit(function () {
     }
 
     return false;
+});
+
+// Init spectrum color picker
+$("#bg-color").spectrum({
+    showInput: true,
+    color: "#fff"
 });
