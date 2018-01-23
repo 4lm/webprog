@@ -1,3 +1,4 @@
+/* Navbar settings */
 #navi-hintergrund {
   background-color:#c7cecf;
   opacity: 0.9;
@@ -21,10 +22,13 @@
   padding-left: 10px !important;
 }
 
-.abstand {
-  padding: 5%;
+#logo-title-swc {
+  font-family: 'Lobster', cursive;
+  font-size: 2.5rem;
+  padding-bottom: 0.2rem;
 }
 
+/* Buttons settings */
 .btn {
   background: #7b7483;
   border: none;
@@ -38,10 +42,9 @@
   background: #1b1b1b !important;
 }
 
-#logo-title-swc {
-  font-family: 'Lobster', cursive;
-  font-size: 2.5rem;
-  padding-bottom: 0.2rem;
+/* General settings */
+.abstand {
+  padding: 5%;
 }
 
 h1 {
@@ -130,6 +133,7 @@ h3 {
     display: none;
 }
 
+/* Load font-families of Fonts to choose from (system fonts) */
 #sans-serif {
   font-family: sans-serif;
 }

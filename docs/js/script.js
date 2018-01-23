@@ -227,6 +227,7 @@ document.getElementById("download-png").addEventListener("click", function (e) {
 });
 
 
+// Function for sticking navbar to top, even while scrolling
 $(window).scroll(function () {
     if ($(".navbar").offset().top > 50) {
         $(".navbar-fixed-top").addClass("top-nav-collpase");
@@ -235,6 +236,7 @@ $(window).scroll(function () {
     }
 });
 
+// Function for page scrolling to anchor
 $(function () {
     $(".page-scroll a").click(function (event) {
         var anchor = $(this);
