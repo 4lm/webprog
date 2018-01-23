@@ -11,7 +11,7 @@
 - js/script.js
 - css/style.css
 
-# MIT License text: 
+## MIT License text: 
 
 Copyright (c) <2018> <Alexis Michaltsis, Jana Passhel, David Gohlke>
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -25,7 +25,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - js/d3.layout.cloud.js
 - js/d3.min.js
 
-# The 3-Clause BSD License text:
+## The 3-Clause BSD License text:
 
 Copyright <2018> <Alexis Michaltsis, Jana Passhel, David Gohlke>
 
