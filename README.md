@@ -6,7 +6,7 @@
 
 ### About us
 
-We are a small group of students at the "Technische Hochschule Brandenburg - Univerisity of Applied Sciences", in the state of Brandenburg, Germany. Our group consists of:
+We are a small group of students at the "Technische Hochschule Brandenburg - University of Applied Sciences", in the state of Brandenburg, Germany. Our group consists of:
 
 - Alexis Michaltsis
 - Jana Passehl
