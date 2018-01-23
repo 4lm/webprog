@@ -2,7 +2,7 @@
 
 ## Create your own Syno Word Cloud!
 
-### You find the website to this project live at https://4lm.github.io/webprog/
+### You find the website of this project at https://4lm.github.io/webprog/
 
 ### About us
 
