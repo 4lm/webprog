@@ -1,5 +1,5 @@
 // Function fetches JSON from datamuse-API, gets all user arguments and draws SVG element
-function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format) {
+function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format) {
 
     // Use of proxy server to add CORS to original API response
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -187,7 +187,7 @@ document.getElementById("submitButton").addEventListener("click", function (e) {
         var font = document.querySelector('input[name="fonts"]:checked').value;
         var color_scheme = document.getElementById("color_scheme").value;
         var canvas_format = [document.getElementById("w").value, document.getElementById("h").value];
-        fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format);
+        fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format);
     }
     return false;
 });
