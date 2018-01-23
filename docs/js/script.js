@@ -1,27 +1,6 @@
 // Function fetches JSON from datamuse-API, gets all user arguments and draws SVG element
 function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format) {
 
-    // Choose color scheme
-    switch (parseInt(color_scheme)) {
-        case 1:
-            var fill = d3.scale.category10();
-            break;
-        case 2:
-            var fill = d3.scale.category20();
-            break;
-        case 3:
-            var fill = d3.scale.category20b();
-            break;
-        case 4:
-            var fill = d3.scale.category20c();
-            break;
-        default:
-            var fill = d3.scale.category10();
-    }
-
-    // Lowercase keywords
-    words_value = words_value.toLowerCase();
-
     // Use of proxy server to add CORS to original API response
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     var targetUrl = 'https://api.datamuse.com/words?ml=' + words_value;
@@ -31,6 +10,26 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
     var divide = 1; // Divide factor, initiated with the value 1
     var counter = -1;
     var layout;
+    words_value = words_value.toLowerCase(); // Lowercase keywords
+    var fill;
+
+    // Choose color scheme
+    switch (parseInt(color_scheme)) {
+        case 1:
+            fill = d3.scale.category10();
+            break;
+        case 2:
+            fill = d3.scale.category20();
+            break;
+        case 3:
+            fill = d3.scale.category20b();
+            break;
+        case 4:
+            fill = d3.scale.category20c();
+            break;
+        default:
+            fill = d3.scale.category10();
+    }
 
     // Fetch from API witch Fetch-API
     fetch(proxyUrl + targetUrl)
