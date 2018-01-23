@@ -3,8 +3,8 @@ function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientati
 
     // Use of proxy server to add CORS to original API response
     words_value = words_value.toLowerCase(); // Lowercase keywords
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    var targetUrl = 'https://api.datamuse.com/words?ml=' + words_value;
+    var proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    var targetUrl = "https://api.datamuse.com/words?ml=" + words_value;
     var words = []; // Array of words list
     var score = []; // Array of score of word list
     var max = 0; // Variable for holding the max score value
@@ -119,7 +119,7 @@ function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientati
                     .append("rect")
                     .attr("width", "100%")
                     .attr("height", "100%")
-                    .attr("fill", $("#bg-color").spectrum('get').toHexString());
+                    .attr("fill", $("#bg-color").spectrum("get").toHexString());
 
                 d3.select("svg")
                     .append("g")
@@ -150,7 +150,7 @@ function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientati
 // Download SVG function
 function downloadSVG() {
     var words_value = document.getElementById("words").value;
-    var svg = document.getElementsByTagName('svg')[0];
+    var svg = document.getElementsByTagName("svg")[0];
     function svgDataURL(svg) {
         var svgAsXML = (new XMLSerializer).serializeToString(svg);
         return "data:image/svg+xml," + encodeURIComponent(svgAsXML);
@@ -166,7 +166,7 @@ function downloadSVG() {
 // Download SVG function, calls saveSvgAsPng-js-lib
 function downloadPNG() {
     var words_value = document.getElementById("words").value;
-    saveSvgAsPng(document.getElementsByTagName('svg')[0], words_value + ".png");
+    saveSvgAsPng(document.getElementsByTagName("svg")[0], words_value + ".png");
 }
 
 // Eventlistener for Submit Button
@@ -183,12 +183,12 @@ document.getElementById("submitButton").addEventListener("click", function (e) {
         document.getElementById("cloud").innerHTML = "<img src=\"images/ajax-loader.gif\">";
 
         var words_value = document.getElementById("words").value;
-        var keyword = document.querySelector('input[name="keyword"]:checked').value;
-        var capitalize = document.querySelector('input[name="capitalize"]:checked').value;
+        var keyword = document.querySelector("input[name=\"keyword\"]:checked").value;
+        var capitalize = document.querySelector("input[name=\"capitalize\"]:checked").value;
         var max_words = document.getElementById("max_words").value;
-        var orientations = document.querySelector('input[name="orientations"]:checked').value;
+        var orientations = document.querySelector("input[name=\"orientations\"]:checked").value;
         var padding = document.getElementById("padding").value;
-        var font = document.querySelector('input[name="fonts"]:checked').value;
+        var font = document.querySelector("input[name=\"fonts\"]:checked").value;
         var color_scheme = document.getElementById("color_scheme").value;
         var canvas_format = [document.getElementById("w").value, document.getElementById("h").value];
         fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format);
@@ -236,67 +236,67 @@ $(window).scroll(function () {
 });
 
 $(function () {
-    $('.page-scroll a').click(function (event) {
+    $(".page-scroll a").click(function (event) {
         var anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $(anchor.attr('href')).offset().top - 50
+        $("html, body").stop().animate({
+            scrollTop: $(anchor.attr("href")).offset().top - 50
         },
             1500,
-            'linear'
+            "linear"
         );
         event.preventDefault();
     });
 });
 
 // Submit form function
-$('#frmContact').submit(function () {
+$("#frmContact").submit(function () {
     var formControl = true;
 
-    var frmGrpVorname = $('#vorname');
-    var frmGrpNachname = $('#nachname');
-    var frmGrpMail = $('#mail');
-    var frmGrpNachricht = $('#nachricht');
+    var frmGrpVorname = $("#vorname");
+    var frmGrpNachname = $("#nachname");
+    var frmGrpMail = $("#mail");
+    var frmGrpNachricht = $("#nachricht");
 
-    frmGrpVorname.removeClass('is-invalid');
-    frmGrpNachname.removeClass('is-invalid');
-    frmGrpMail.removeClass('is-invalid');
-    frmGrpNachricht.removeClass('is-invalid');
+    frmGrpVorname.removeClass("is-invalid");
+    frmGrpNachname.removeClass("is-invalid");
+    frmGrpMail.removeClass("is-invalid");
+    frmGrpNachricht.removeClass("is-invalid");
 
-    var vorname = $('#vorname').val();
-    var nachname = $('#nachname').val();
-    var mail = $('#mail').val();
-    var nachricht = $('#nachricht').val();
+    var vorname = $("#vorname").val();
+    var nachname = $("#nachname").val();
+    var mail = $("#mail").val();
+    var nachricht = $("#nachricht").val();
 
-    if (vorname == '') {
+    if (vorname == "") {
         formControl = false;
-        frmGrpVorname.addClass('is-invalid');
+        frmGrpVorname.addClass("is-invalid");
     }
 
-    if (nachname == '') {
+    if (nachname == "") {
         formControl = false;
-        frmGrpNachname.addClass('is-invalid');
+        frmGrpNachname.addClass("is-invalid");
     }
 
-    if (mail == '') {
+    if (mail == "") {
         formControl = false;
-        frmGrpMail.addClass('is-invalid');
+        frmGrpMail.addClass("is-invalid");
     }
 
-    if (nachricht == '') {
+    if (nachricht == "") {
         formControl = false;
-        frmGrpNachricht.addClass('is-invalid');
+        frmGrpNachricht.addClass("is-invalid");
     }
 
     if (formControl) {
         $.ajax({
-            type: 'POST',
-            url: 'https://formspree.io/7262de68-ae33-4758-b3a3-1283c824f2a6@michaltsis.net',
+            type: "POST",
+            url: "https://formspree.io/7262de68-ae33-4758-b3a3-1283c824f2a6@michaltsis.net",
             data: { vorname: vorname, nachname: nachname, mail: mail, nachricht: nachricht }
         }).done(function (message) {
-            var erfolgsmeldung = $('#erfolgsmeldung');
+            var erfolgsmeldung = $("#erfolgsmeldung");
             erfolgsmeldung.html(message);
-            erfolgsmeldung.addClass('alert');
-            erfolgsmeldung.addClass('alert-success');
+            erfolgsmeldung.addClass("alert");
+            erfolgsmeldung.addClass("alert-success");
         });
 
     }
