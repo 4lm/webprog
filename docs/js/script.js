@@ -141,6 +141,10 @@ function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientati
             console.log(e);
             return e;
         });
+
+    // Display download buttons
+    document.getElementById("download-svg").style.display = "inline";
+    document.getElementById("download-png").style.display = "inline";
 }
 
 // Download SVG function

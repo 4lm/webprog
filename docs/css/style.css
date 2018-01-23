@@ -116,12 +116,14 @@ h3 {
   margin-top: 5px;
 }
 
-#submitButton, #download-svg, #download-png {
-    margin-top: 5px;
+#submitButton {
+  margin-top: 5px;
 }
 
-
-/* Don't edit below this line */
+#download-svg, #download-png {
+    margin-top: 5px;
+    display: none;
+}
 
 #sans-serif {
   font-family: sans-serif;
