@@ -37,7 +37,6 @@ $('#frmContact').submit(function () {
   var mail = $('#mail').val();
   var nachricht = $('#nachricht').val();
 
-
   if (vorname == '') {
     formControl = false;
     frmGrpVorname.addClass('is-invalid');
