@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,324 +12,353 @@
     <!-- Mein CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" role="navigation">
-<section id="home" class="home-section">
-    <div class="container-fluid">
-        <nav class="navbar navbar-light navbar-expand-md fixed-top" id="navi-hintergrund">
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <h1>Syno Word Cloud</h1>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav  ml-auto">
-                    <li class="nav-item page-scroll">
-                        <a class="nav-link" href="#home">home</a>
-                    </li>
-                    <li class="nav-item page-scroll">
-                        <a class="nav-link" href="#create_word_cloud">create word cloud</a>
-                    </li>
-                    <li class="nav-item page-scroll">
-                        <a class="nav-link" href="#about">about</a>
-                    </li>
-                    <li class="nav-item page-scroll">
-                        <a class="nav-link" href="#contact">contact</a>
-                    </li>
-                    <li class="nav-item page-scroll">
-                        <a class="nav-link" href="#imprint">imprint</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
 
-    <div class="jumbotron jumbotron-fluid" id="banner">
-        <div class="parallax text-center">
-            <div class="parallax-pattern-overlay">
-                <div class="container text-center" style="height:580px;padding-top:170px;">
-                    <div class="row">
-                        <div class="col-sm-2"></div>
-                        <div class="col-sm-8">
-                            <h2 class="display-2 jombo-text-back">Syno Word Cloud</h2>
-                           <a href="#create_word_cloud"><h3 class="learn jombo-text-back">Create your own syno word cloud!</h3></a>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" role="navigation">
+    <section id="home" class="home-section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-light navbar-expand-md fixed-top" id="navi-hintergrund">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <h1>Syno Word Cloud</h1>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav  ml-auto">
+                        <li class="nav-item page-scroll">
+                            <a class="nav-link" href="#home">home</a>
+                        </li>
+                        <li class="nav-item page-scroll">
+                            <a class="nav-link" href="#create_word_cloud">create word cloud</a>
+                        </li>
+                        <li class="nav-item page-scroll">
+                            <a class="nav-link" href="#about">about</a>
+                        </li>
+                        <li class="nav-item page-scroll">
+                            <a class="nav-link" href="#contact">contact</a>
+                        </li>
+                        <li class="nav-item page-scroll">
+                            <a class="nav-link" href="#imprint">imprint</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="jumbotron jumbotron-fluid" id="banner">
+            <div class="parallax text-center">
+                <div class="parallax-pattern-overlay">
+                    <div class="container text-center" style="height:580px;padding-top:170px;">
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <h2 class="display-2 jombo-text-back">Syno Word Cloud</h2>
+                                <a href="#create_word_cloud">
+                                    <h3 class="learn jombo-text-back">Create your own syno word cloud!</h3>
+                                </a>
+                            </div>
+                            <div class="col-sm-2"></div>
                         </div>
-                        <div class="col-sm-2"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<section id="create_word_cloud" class="create-section container-fluid abstand">
-    <div class="row">
-        <div class="col-md-5">
-            <form>
-                <h1>Create your own Syno Word Cloud!</h1>
-                <div class="form-group">
-                    <label for="words" class="createFormular">Fill in a word:</label>
-                    <input type="text" class="form-control" id="words" placeholder="Insert word" required>
-                </div>
-                <fieldset class="form-group">
-                    <label class="createFormular">Should your selected keyword be contained in the Word cloud?</label><br/>
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary active">
-                            <input type="radio" name="keyword" value="true" autocomplete="off" checked> Yes
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="radio" name="keyword" value="false" autocomplete="off"> No
-                        </label>
+    </section>
+    <section id="create_word_cloud" class="create-section container-fluid abstand">
+        <div class="row">
+            <div class="col-md-5">
+                <form>
+                    <h1>Create your own Syno Word Cloud!</h1>
+                    <div class="form-group">
+                        <label for="words" class="createFormular">Fill in a word:</label>
+                        <input type="text" class="form-control" id="words" placeholder="Insert word" required>
                     </div>
-                </fieldset>
-                <div class="form-group">
-                    <label for="max_words" class="createFormular">Enter the maximum number of words the Word Cloud should contain:</label>
-                    <input type="number" class="form-control" id="max_words" value="100" min="1" placeholder="Number of words">
-                </div>
-                <fieldset class="form-group">
-                    <label class="createFormular">Number of orientations:</label><br/>
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary">
-                            <input type="radio" name="orientations" value="1" autocomplete="off"> 1
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="radio" name="orientations" value="2" autocomplete="off"> 2
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="radio" name="orientations" value="3" autocomplete="off"> 3
-                        </label>
-                        <label class="btn btn-primary">
-                            <input type="radio" name="orientations" value="4" autocomplete="off"> 4
-                        </label>
-                        <label class="btn btn-primary active">
-                            <input type="radio" name="orientations" value="5" autocomplete="off" checked> &infin;
-                        </label>
-                    </div>
-                </fieldset>
-                <div class="form-group">
-                    <label class="createFormular">Select the font:</label>
-                    <div class="btn-group btn-group-toggle fontSelector" data-toggle="buttons">
-                        <label class="btn btn-primary active sans-serif" id="sans-serif">
-                            <input type="radio" name="fonts" value='sans-serif' checked> sans-serif
-                        </label>
-                        <label class="btn btn-primary serif" id="serif">
-                            <input type="radio" name="fonts" value='serif'> serif
-                        </label>
-                        <label class="btn btn-primary cursive" id="cursive">
-                            <input type="radio" name="fonts" value='cursive'> cursive
-                        </label>
-                        <label class="btn btn-primary fantasy" id="fantasy">
-                            <input type="radio" name="fonts" value='fantasy'> fantasy
-                        </label>
-                        <label class="btn btn-primary monospace" id="monospace">
-                            <input type="radio" name="fonts" value='monospace'> monospace
-                        </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="padding" class="createFormular">Padding between Words</label>
-                            <input type="number" class="form-control" id="padding" value="7" min="0">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="createFormular">Capital letter at the beginning of the word:</label>
+                    <fieldset class="form-group">
+                        <label class="createFormular">Should your selected keyword be contained in the Word cloud?</label>
+                        <br/>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-primary active">
-                                <input type="radio" name="capitalize" value="true" autocomplete="off" checked> Yes
+                                <input type="radio" name="keyword" value="true" autocomplete="off" checked> Yes
                             </label>
                             <label class="btn btn-primary">
-                                <input type="radio" name="capitalize" value="false" autocomplete="off"> No
+                                <input type="radio" name="keyword" value="false" autocomplete="off"> No
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        <label for="max_words" class="createFormular">Enter the maximum number of words the Word Cloud should contain:</label>
+                        <input type="number" class="form-control" id="max_words" value="100" min="1" placeholder="Number of words">
+                    </div>
+                    <fieldset class="form-group">
+                        <label class="createFormular">Number of orientations:</label>
+                        <br/>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-primary">
+                                <input type="radio" name="orientations" value="1" autocomplete="off"> 1
+                            </label>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="orientations" value="2" autocomplete="off"> 2
+                            </label>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="orientations" value="3" autocomplete="off"> 3
+                            </label>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="orientations" value="4" autocomplete="off"> 4
+                            </label>
+                            <label class="btn btn-primary active">
+                                <input type="radio" name="orientations" value="5" autocomplete="off" checked> &infin;
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        <label class="createFormular">Select the font:</label>
+                        <div class="btn-group btn-group-toggle fontSelector" data-toggle="buttons">
+                            <label class="btn btn-primary active sans-serif" id="sans-serif">
+                                <input type="radio" name="fonts" value='sans-serif' checked> sans-serif
+                            </label>
+                            <label class="btn btn-primary serif" id="serif">
+                                <input type="radio" name="fonts" value='serif'> serif
+                            </label>
+                            <label class="btn btn-primary cursive" id="cursive">
+                                <input type="radio" name="fonts" value='cursive'> cursive
+                            </label>
+                            <label class="btn btn-primary fantasy" id="fantasy">
+                                <input type="radio" name="fonts" value='fantasy'> fantasy
+                            </label>
+                            <label class="btn btn-primary monospace" id="monospace">
+                                <input type="radio" name="fonts" value='monospace'> monospace
                             </label>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="color_scheme" class="createFormular">Select the color design:</label>
-                    <select class="form-control" id="color_scheme">
-                        <option value="1">Spring</option>
-                        <option value="2">Summer</option>
-                        <option value="3">Autumn</option>
-                        <option value="4">Winter</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="createFormular">Select the desired size for the Word cloud :</label>
                     <div class="row">
-                        <div class="col-md-4">
-                            <label>background color::</label>
-                            <input type="color" id="bg-color" class="" value="#ffffff">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="padding" class="createFormular">Padding between Words</label>
+                                <input type="number" class="form-control" id="padding" value="7" min="0">
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <label>Image width in pixels:</label>
-                            <input type="number" id="w" class="form-control" value="1200" min="0">
-                        </div>
-                        <div class="col-md-4">
-                            <label>Image height in pixels:</label>
-                            <input type="number" class="form-control" id="h" value="800" min="0">
+                        <div class="col-md-6">
+                            <label class="createFormular">Capital letter at the beginning of the word:</label>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-primary active">
+                                    <input type="radio" name="capitalize" value="true" autocomplete="off" checked> Yes
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="capitalize" value="false" autocomplete="off"> No
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-group text-right" role="group" >
-                    <button
-                            type="submit"
-                            id="submitButton"
-                            class="btn btn-primary btn-lg">
-                        Submit
-                    </button>
-                    <button id="download-svg" class="btn btn-info btn-lg">Download SVG</button>
+                    <div class="form-group">
+                        <label for="color_scheme" class="createFormular">Select the color design:</label>
+                        <select class="form-control" id="color_scheme">
+                            <option value="1">Spring</option>
+                            <option value="2">Summer</option>
+                            <option value="3">Autumn</option>
+                            <option value="4">Winter</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="createFormular">Select the desired size for the Word cloud :</label>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>background color::</label>
+                                <input type="color" id="bg-color" class="" value="#ffffff">
+                            </div>
+                            <div class="col-md-4">
+                                <label>Image width in pixels:</label>
+                                <input type="number" id="w" class="form-control" value="1200" min="0">
+                            </div>
+                            <div class="col-md-4">
+                                <label>Image height in pixels:</label>
+                                <input type="number" class="form-control" id="h" value="800" min="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group text-right" role="group">
+                        <button type="submit" id="submitButton" class="btn btn-primary btn-lg">
+                            Submit
+                        </button>
+                        <button id="download-svg" class="btn btn-info btn-lg">Download SVG</button>
 
-                    <button id="download-png" class="btn btn-info btn-lg">Download PNG</button>
-                </div>
+                        <button id="download-png" class="btn btn-info btn-lg">Download PNG</button>
+                    </div>
 
-            </form>
-        </div>
-        <div class="col-md-7">
-            <div id="cloud" class="w-100">
-                <img src="images/create.jpg" class="w-100" alt="Word Cloud">
-                <p id="right">© CrazyCloud / Fotolia.</p>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <div id="cloud" class="w-100">
+                    <img src="images/create.jpg" class="w-100" alt="Word Cloud">
+                    <p id="right">© CrazyCloud / Fotolia.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<section id="about" class="about-section container-fluid abstand">
-    <h1>about us</h1>
-    <p>We are a small group of students of the Brandenburg University of Technology. Our group consists of the students:</p>
-    <div class="row">
-    <div class="col-md-4">
-        <p class="text-center"><img src="images/alexis.jpg" alt="Alexis Michaltsis" class="rounded-circle"></p>
-        <h4>Alexis Michaltsis</h4>
-        <h5>3 Semester</h5>
-       <p>Sociologist, film technician and since 3 semesters a passionate student of media informatics with a slight inclination to programming languages with curly brackets.</p>
-    </div>
-    <div class="col-md-4">
-        <p class="text-center"><img src="images/jana.jpg" alt="Alexis Michaltsis" class="rounded-circle"></p>
-        <h4>Jana Passehl</h4>
-        <h5>3 Semester</h5>
-        <p>Designer, photographer and since 3 semesters student of media informatics with a slight neurosis to star stories.</p>
-    </div>
-    <div class="col-md-4">
-        <p class="text-center"><img src="images/david.jpeg" alt="Alexis Michaltsis" class="rounded-circle"></p>
-        <h4>David Gohlke</h4>
-        <h5>3 Semester</h5>
-        <p>Keboard jockey and mouse pusher by profession and since 3 semesters a student of media informatics, who masters the chaos or at least tries to do it.</p>
-    </div>
-    </div>
-    <hr>
-    <p>This website was created as the final project for the "Web Programmierung" course, which was led by Professor Dr. Thomas Preuss.</p>
-</section>
-<section id="contact" class="contact-section container-fluid abstand">
-    <h1>Contact us!</h1>
-    <div class="row">
-        <div class="col-md-5">
-            <div id="erfolgsmeldung"></div>
-            <form role="form" id="frmContact"> <!-- Formular Beginn -->
-                <div class="form-group" id="frmGrpVorname">
-                    <label for="vorname" class="control-label createFormular">First name:</label>
-                    <input type="text" id="vorname" class="form-control"
-                           placeholder="Your first name">
-                </div>
-                <div class="form-group" id="frmGrpNachname">
-                    <label for="nachname" class="control-label createFormular">Last name:</label>
-                    <input type="text" id="nachname" class="form-control"
-                           placeholder="Your last name">
-                </div>
-                <div class="form-group" id="frmGrpMail">
-                    <label for="mail" class="control-label createFormular">Mail:</label>
-                    <input type="email" id="mail" class="form-control" placeholder="Your mail address">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.
-                    </small>
-                </div>
-                <div class="form-group" id="frmGrpNachricht">
-                    <label for="nachricht" class="control-label createFormular">Your message:</label>
-                    <textarea id="nachricht" class="form-control" rows="4" placeholder="Your message"></textarea>
-                </div>
-                <div class="form-group text-right">
-                    <button
-                            type="submit"
-                            id="submitBtn"
-                            class="btn btn-primary btn-lg">
-                       Submit
-                    </button>
-                </div>
-            </form> <!-- Formular Ende -->
-        </div>
-    </div>
-</section>
-<section id="imprint" class="imprint-section container-fluid abstand">
-    <div class='impressum'>
+    </section>
+    <section id="about" class="about-section container-fluid abstand">
+        <h1>About us</h1>
+        <p>We are a small group of students of the Brandenburg University of Technology. Our group consists of the students:</p>
         <div class="row">
-            <div class="col-md-9">
-        <h1>imprint</h1>
-        <p>Angaben gemäß § 5 TMG</p>
-        <p>Alexis Michaltsis <br>
-            Karl-Marx-Str. 282 <br>
-            12057 Berlin <br>
-        </p>
-        <p><strong>Vertreten durch: </strong><br>
-            Alexis Michaltsis<br>
-        </p>
+            <div class="col-md-4">
+                <p class="text-center">
+                    <img src="images/alexis.jpg" alt="Alexis Michaltsis" class="rounded-circle">
+                </p>
+                <h4>Alexis Michaltsis</h4>
+                <h5>3 Semester</h5>
+                <p>Sociologist, film technician and since 3 semesters a passionate student of media informatics with a slight
+                    inclination to programming languages with curly brackets.</p>
             </div>
-            <div class="col-md-3">
-                <div id="paragraph">§</div>
+            <div class="col-md-4">
+                <p class="text-center">
+                    <img src="images/jana.jpg" alt="Jana Passehl" class="rounded-circle">
+                </p>
+                <h4>Jana Passehl</h4>
+                <h5>3 Semester</h5>
+                <p>Designer, photographer and since 3 semesters student of media informatics with a slight neurosis to star
+                    stories.</p>
+            </div>
+            <div class="col-md-4">
+                <p class="text-center">
+                    <img src="images/david.jpg" alt="David Gohlke" class="rounded-circle">
+                </p>
+                <h4>David Gohlke</h4>
+                <h5>3 Semester</h5>
+                <p>Keboard jockey and mouse pusher by profession and since 3 semesters a student of media informatics, who masters
+                    the chaos or at least tries to do it.</p>
             </div>
         </div>
+        <hr>
+        <p>This website was created as the final project for the "Web Programmierung" course, which was led by Professor Dr.
+            Thomas Preuss.</p>
+    </section>
+    <section id="contact" class="contact-section container-fluid abstand">
+        <h1>Contact us!</h1>
         <div class="row">
-            <div class="col-md-10">
-        <p><strong>Haftungsausschluss: </strong><br><br><strong>Haftung für Inhalte</strong><br><br>
-            Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und
-            Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7
-            Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis
-            10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
-            Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-            Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen
-            bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer
-            konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese
-            Inhalte umgehend entfernen.<br><br><strong>Haftung für Links</strong><br><br>
-            Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben.
-            Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten
-            Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten
-            wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum
-            Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist
-            jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von
-            Rechtsverletzungen werden wir derartige Links umgehend
-            entfernen.<br><br><strong>Urheberrecht</strong><br><br>
-            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen
-            Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
-            Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
-            Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit
-            die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet.
-            Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine
-            Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von
-            Rechtsverletzungen werden wir derartige Inhalte umgehend
-            entfernen.<br><br><strong>Datenschutz</strong><br><br>
-            Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf
-            unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden,
-            erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche
-            Zustimmung nicht an Dritte weitergegeben. <br>
-            Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail)
-            Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht
-            möglich. <br>
-            Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung
-            von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich
-            widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der
-            unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.<br>
-        </p><br>
-        Website Impressum erstellt durch <a href="http://www.impressum-generator.de">impressum-generator.de</a> von der
-        <a href="http://www.kanzlei-hasselbach.de/" rel="nofollow">Kanzlei Hasselbach</a>
+            <div class="col-md-5">
+                <div id="erfolgsmeldung"></div>
+                <form role="form" id="frmContact">
+                    <!-- Formular Beginn -->
+                    <div class="form-group" id="frmGrpVorname">
+                        <label for="vorname" class="control-label createFormular">First name:</label>
+                        <input type="text" id="vorname" class="form-control" placeholder="Your first name">
+                    </div>
+                    <div class="form-group" id="frmGrpNachname">
+                        <label for="nachname" class="control-label createFormular">Last name:</label>
+                        <input type="text" id="nachname" class="form-control" placeholder="Your last name">
+                    </div>
+                    <div class="form-group" id="frmGrpMail">
+                        <label for="mail" class="control-label createFormular">Mail:</label>
+                        <input type="email" id="mail" class="form-control" placeholder="Your mail address">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.
+                        </small>
+                    </div>
+                    <div class="form-group" id="frmGrpNachricht">
+                        <label for="nachricht" class="control-label createFormular">Your message:</label>
+                        <textarea id="nachricht" class="form-control" rows="4" placeholder="Your message"></textarea>
+                    </div>
+                    <div class="form-group text-right">
+                        <button type="submit" id="submitBtn" class="btn btn-primary btn-lg">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+                <!-- Formular Ende -->
+            </div>
         </div>
+    </section>
+    <section id="Imprint" class="imprint-section container-fluid abstand">
+        <div class='impressum'>
+            <div class="row">
+                <div class="col-md-9">
+                    <h1>imprint</h1>
+                    <p>Angaben gemäß § 5 TMG</p>
+                    <p>Alexis Michaltsis
+                        <br> Karl-Marx-Str. 282
+                        <br> 12057 Berlin
+                        <br>
+                    </p>
+                    <p>
+                        <strong>Vertreten durch: </strong>
+                        <br> Alexis Michaltsis
+                        <br>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <div id="paragraph">§</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <p>
+                        <strong>Haftungsausschluss: </strong>
+                        <br>
+                        <br>
+                        <strong>Haftung für Inhalte</strong>
+                        <br>
+                        <br> Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit
+                        und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir
+                        gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
+                        Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte
+                        fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit
+                        hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen
+                        Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt
+                        der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen
+                        werden wir diese Inhalte umgehend entfernen.
+                        <br>
+                        <br>
+                        <strong>Haftung für Links</strong>
+                        <br>
+                        <br> Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss
+                        haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte
+                        der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+                        Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft.
+                        Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche
+                        Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht
+                        zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+                        <br>
+                        <br>
+                        <strong>Urheberrecht</strong>
+                        <br>
+                        <br> Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen
+                        Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb
+                        der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+                        Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+                        Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte
+                        Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem
+                        auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei
+                        Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+                        <br>
+                        <br>
+                        <strong>Datenschutz</strong>
+                        <br>
+                        <br> Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit
+                        auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben
+                        werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre
+                        ausdrückliche Zustimmung nicht an Dritte weitergegeben.
+                        <br> Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail)
+                        Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist
+                        nicht möglich.
+                        <br> Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung
+                        von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich
+                        widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der
+                        unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.
+                        <br>
+                    </p>
+                    <br> Website Impressum erstellt durch
+                    <a href="http://www.impressum-generator.de">impressum-generator.de</a> von der
+                    <a href="http://www.kanzlei-hasselbach.de/" rel="nofollow">Kanzlei Hasselbach</a>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
-<!-- jQuery first, then Tether, then Bootstrap JS. then my.js -->
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-<script src="js/my.js"></script>
-<script src="js/d3.min.js"></script>
-<script src="js/d3.layout.cloud.js"></script>
-<script src="js/create.js"></script>
-<script src="js/saveSvgAsPng.js"></script>
-<script src="js/main.js"></script>
+    </section>
+    <!-- jQuery first, then Tether, then Bootstrap JS. then my.js -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="js/my.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/d3.layout.cloud.js"></script>
+    <script src="js/create.js"></script>
+    <script src="js/saveSvgAsPng.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
