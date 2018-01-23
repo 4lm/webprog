@@ -2,6 +2,7 @@
 function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format) {
 
     // Use of proxy server to add CORS to original API response
+    words_value = words_value.toLowerCase(); // Lowercase keywords
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     var targetUrl = 'https://api.datamuse.com/words?ml=' + words_value;
     var words = []; // Array of words list
@@ -10,7 +11,6 @@ function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientati
     var divide = 1; // Divide factor, initiated with the value 1
     var counter = -1;
     var layout;
-    words_value = words_value.toLowerCase(); // Lowercase keywords
     var fill;
 
     // Choose color scheme
