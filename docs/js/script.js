@@ -35,113 +35,113 @@ function fetchJSONandDraw(words_value, keyword, capitalize, max_words, orientati
     // Fetch from API witch Fetch-API
     fetch(proxyUrl + targetUrl)
         .then(blob => blob.json())
-.then(data => {
-        for (i = 0; i < data.length; i++) {
-        words[i] = data[i].word;
-        score[i] = data[i].score;
-        if (data[i].score > max) {
-            max = data[i].score;
-        }
-    }
-    // Normalize word weighting
-    divide = max / 100;
-    if (keyword == "true") {
-        words.unshift(words_value);
-        score.unshift(100000);
-    }
+        .then(data => {
+            for (i = 0; i < data.length; i++) {
+                words[i] = data[i].word;
+                score[i] = data[i].score;
+                if (data[i].score > max) {
+                    max = data[i].score;
+                }
+            }
+            // Normalize word weighting
+            divide = max / 100;
+            if (keyword == "true") {
+                words.unshift(words_value);
+                score.unshift(100000);
+            }
 
-    // Capitalize words if true
-    if (capitalize == "true") {
-        for (i = 0; i < words.length; i++) {
-            words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
-        }
-    }
+            // Capitalize words if true
+            if (capitalize == "true") {
+                for (i = 0; i < words.length; i++) {
+                    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+                }
+            }
 
-    // Define max words
-    words = words.slice(0, parseInt(max_words));
-    score = score.slice(0, parseInt(max_words));
+            // Define max words
+            words = words.slice(0, parseInt(max_words));
+            score = score.slice(0, parseInt(max_words));
 
-    // Define layout
-    if (orientations == 5) {
-        layout = d3.layout.cloud()
-            .size(canvas_format)
-            .words(words.map(function (word) {
-                counter++;
-                return { text: word, size: score[counter] / divide };
-            }))
-            .padding(parseInt(padding))
-            .font(font)
-            .fontSize(d => d.size)
-    .on("end", draw);
-    } else {
-        layout = d3.layout.cloud()
-            .size(canvas_format)
-            .words(words.map(function (word) {
-                counter++;
-                return { text: word, size: score[counter] / divide };
-            }))
-            .padding(parseInt(padding))
-            .rotate(() => {
-            var angle = 0;
-        switch (parseInt(orientations)) {
-            case 1:
-                // angle is 0
-                break;
-            case 2:
-                angle = ~~(Math.random() * 2) * 90;
-                break;
-            case 3:
-                angle = (~~(Math.random() * 2) + ~~(Math.random() * 2)) * 45;
-                break;
-            case 4:
-                angle = (~~(Math.random() * 2) + ~~(Math.random() * 2) + ~~(Math.random() * 2)) * 45;
-                break;
-            default:
-            // angle is 0
-        }
-        return angle;
-    })
-    .font(font)
-            .fontSize(d => d.size)
-    .on("end", draw);
-    }
+            // Define layout
+            if (orientations == 5) {
+                layout = d3.layout.cloud()
+                    .size(canvas_format)
+                    .words(words.map(function (word) {
+                        counter++;
+                        return { text: word, size: score[counter] / divide };
+                    }))
+                    .padding(parseInt(padding))
+                    .font(font)
+                    .fontSize(d => d.size)
+                    .on("end", draw);
+            } else {
+                layout = d3.layout.cloud()
+                    .size(canvas_format)
+                    .words(words.map(function (word) {
+                        counter++;
+                        return { text: word, size: score[counter] / divide };
+                    }))
+                    .padding(parseInt(padding))
+                    .rotate(() => {
+                        var angle = 0;
+                        switch (parseInt(orientations)) {
+                            case 1:
+                                // angle is 0
+                                break;
+                            case 2:
+                                angle = ~~(Math.random() * 2) * 90;
+                                break;
+                            case 3:
+                                angle = (~~(Math.random() * 2) + ~~(Math.random() * 2)) * 45;
+                                break;
+                            case 4:
+                                angle = (~~(Math.random() * 2) + ~~(Math.random() * 2) + ~~(Math.random() * 2)) * 45;
+                                break;
+                            default:
+                            // angle is 0
+                        }
+                        return angle;
+                    })
+                    .font(font)
+                    .fontSize(d => d.size)
+                    .on("end", draw);
+            }
 
-    layout.start();
+            layout.start();
 
-    // d3 draw function, which is called at the end of d3-cloud layout declaration
-    function draw(words) {
-        document.getElementById("cloud").innerHTML = "";
+            // d3 draw function, which is called at the end of d3-cloud layout declaration
+            function draw(words) {
+                document.getElementById("cloud").innerHTML = "";
 
-        d3.select("#cloud")
-            .append("svg")
-            .attr("viewBox", "0, 0, " + layout.size()[0] + ", " + layout.size()[1]);
+                d3.select("#cloud")
+                    .append("svg")
+                    .attr("viewBox", "0, 0, " + layout.size()[0] + ", " + layout.size()[1]);
 
-        d3.select("svg")
-            .append("rect")
-            .attr("width", "100%")
-            .attr("height", "100%")
-            .attr("fill", document.getElementById("bg-color").value);
+                d3.select("svg")
+                    .append("rect")
+                    .attr("width", "100%")
+                    .attr("height", "100%")
+                    .attr("fill", document.getElementById("bg-color").value);
 
-        d3.select("svg")
-            .append("g")
-            .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
-            .selectAll("text")
-            .data(words)
-            .enter().append("text")
-            .style("font-size", d => d.size + "px")
-    .style("font-family", font)
-            .style("font-weight", "bold")
-            .style("fill", (d, i) => fill(i))
-    .attr("text-anchor", "middle")
-            .attr("transform", d => "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")")
-    .text(d => d.text);
-    }
-    return data;
-})
-.catch(e => {
-        console.log(e);
-    return e;
-});
+                d3.select("svg")
+                    .append("g")
+                    .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+                    .selectAll("text")
+                    .data(words)
+                    .enter().append("text")
+                    .style("font-size", d => d.size + "px")
+                    .style("font-family", font)
+                    .style("font-weight", "bold")
+                    .style("fill", (d, i) => fill(i))
+                    .attr("text-anchor", "middle")
+                    .attr("transform", d => "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")")
+                    .text(d => d.text);
+            }
+            return data;
+        })
+        .catch(e => {
+            console.log(e);
+            return e;
+        });
 }
 
 // Download SVG function
@@ -226,77 +226,77 @@ document.getElementById("download-png").addEventListener("click", function (e) {
 
 $(window).scroll(function () {
     if ($(".navbar").offset().top > 50) {
-      $(".navbar-fixed-top").addClass("top-nav-collpase");
+        $(".navbar-fixed-top").addClass("top-nav-collpase");
     } else {
-      $(".navbar-fixed-top").removeClass("top-nav-collapse");
+        $(".navbar-fixed-top").removeClass("top-nav-collapse");
     }
-  });
-  
-  $(function () {
+});
+
+$(function () {
     $('.page-scroll a').click(function (event) {
-      var anchor = $(this);
-      $('html, body').stop().animate({
-        scrollTop: $(anchor.attr('href')).offset().top - 50
-      },
-        1500,
-        'linear'
-      );
-      event.preventDefault();
+        var anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top - 50
+        },
+            1500,
+            'linear'
+        );
+        event.preventDefault();
     });
-  });
-  
-  // Submit form function
-  $('#frmContact').submit(function () {
+});
+
+// Submit form function
+$('#frmContact').submit(function () {
     var formControl = true;
-  
+
     var frmGrpVorname = $('#vorname');
     var frmGrpNachname = $('#nachname');
     var frmGrpMail = $('#mail');
     var frmGrpNachricht = $('#nachricht');
-  
+
     frmGrpVorname.removeClass('is-invalid');
     frmGrpNachname.removeClass('is-invalid');
     frmGrpMail.removeClass('is-invalid');
     frmGrpNachricht.removeClass('is-invalid');
-  
+
     var vorname = $('#vorname').val();
     var nachname = $('#nachname').val();
     var mail = $('#mail').val();
     var nachricht = $('#nachricht').val();
-  
+
     if (vorname == '') {
-      formControl = false;
-      frmGrpVorname.addClass('is-invalid');
+        formControl = false;
+        frmGrpVorname.addClass('is-invalid');
     }
-  
+
     if (nachname == '') {
-      formControl = false;
-      frmGrpNachname.addClass('is-invalid');
+        formControl = false;
+        frmGrpNachname.addClass('is-invalid');
     }
-  
+
     if (mail == '') {
-      formControl = false;
-      frmGrpMail.addClass('is-invalid');
+        formControl = false;
+        frmGrpMail.addClass('is-invalid');
     }
-  
+
     if (nachricht == '') {
-      formControl = false;
-      frmGrpNachricht.addClass('is-invalid');
+        formControl = false;
+        frmGrpNachricht.addClass('is-invalid');
     }
-  
+
     if (formControl) {
-      $.ajax({
-        type: 'POST',
-        url: 'https://formspree.io/7262de68-ae33-4758-b3a3-1283c824f2a6@michaltsis.net',
-        data: { vorname: vorname, nachname: nachname, mail: mail, nachricht: nachricht }
-      }).done(function (message) {
-        var erfolgsmeldung = $('#erfolgsmeldung');
-        erfolgsmeldung.html(message);
-        erfolgsmeldung.addClass('alert');
-        erfolgsmeldung.addClass('alert-success');
-      });
-  
+        $.ajax({
+            type: 'POST',
+            url: 'https://formspree.io/7262de68-ae33-4758-b3a3-1283c824f2a6@michaltsis.net',
+            data: { vorname: vorname, nachname: nachname, mail: mail, nachricht: nachricht }
+        }).done(function (message) {
+            var erfolgsmeldung = $('#erfolgsmeldung');
+            erfolgsmeldung.html(message);
+            erfolgsmeldung.addClass('alert');
+            erfolgsmeldung.addClass('alert-success');
+        });
+
     }
-  
+
     return false;
-  });
+});
