@@ -335,7 +335,7 @@ $("#frmContact").submit(function () {
 
     }
 
-    return false;
+    return true;
 });
 
 // Init spectrum color picker
