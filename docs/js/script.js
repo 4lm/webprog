@@ -203,14 +203,12 @@ function callFetchJsonAndDraw() {
 // Eventlistener for submit button
 document.getElementById("submitButton").addEventListener("click", function (e) {
     e.preventDefault();
-    console.log("submit");
     callFetchJsonAndDraw();
     return false;
 });
 
 // Eventlistener for value change in controll panel
 document.getElementById("create_word_cloud").addEventListener("change", function () {
-    console.log("change");
     if (isWordCloudDrawn == true)
         callFetchJsonAndDraw();
 });
