@@ -330,7 +330,7 @@ $("#frmContact").submit(function () {
         });
     }
 
-    return true;
+    return false;
 });
 
 // Init spectrum color picker
