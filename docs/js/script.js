@@ -335,10 +335,10 @@ $("#frmContact").submit(function () {
 
     }
 
-    vorname = "";
-    nachname = "";
-    mail = "";
-    nachricht = "";
+    document.getElementById("vorname").innerHTML = "";
+    document.getElementById("nachname").innerHTML = "";
+    document.getElementById("mail").innerHTML = "";
+    document.getElementById("nachricht").innerHTML = "";
 
     return false;
 });
