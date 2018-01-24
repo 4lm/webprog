@@ -1,5 +1,8 @@
+// Global var for remembering if word cloud has been drawn
+var isWordCloudDrawn = false;
+
 // Function fetches JSON from datamuse-API, gets all user arguments and draws SVG element
-function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format) {
+function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format, bg_color) {
 
     // Use of proxy server to add CORS to original API response
     words_value = words_value.toLowerCase(); // Lowercase keywords
@@ -68,9 +71,9 @@ function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientati
                         counter++;
                         return { text: word, size: score[counter] / divide };
                     }))
-                    .padding(parseInt(padding))
                     .font(font)
                     .fontSize(d => d.size)
+                    .padding(parseInt(padding))
                     .on("end", draw);
             } else {
                 layout = d3.layout.cloud()
@@ -79,6 +82,8 @@ function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientati
                         counter++;
                         return { text: word, size: score[counter] / divide };
                     }))
+                    .font(font)
+                    .fontSize(d => d.size)
                     .padding(parseInt(padding))
                     .rotate(() => {
                         var angle = 0;
@@ -100,8 +105,6 @@ function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientati
                         }
                         return angle;
                     })
-                    .font(font)
-                    .fontSize(d => d.size)
                     .on("end", draw);
             }
 
@@ -119,7 +122,7 @@ function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientati
                     .append("rect")
                     .attr("width", "100%")
                     .attr("height", "100%")
-                    .attr("fill", $("#bg-color").spectrum("get").toHexString());
+                    .attr("fill", bg_color);
 
                 d3.select("svg")
                     .append("g")
@@ -127,11 +130,10 @@ function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientati
                     .selectAll("text")
                     .data(words)
                     .enter().append("text")
-                    .style("font-size", d => d.size + "px")
                     .style("font-family", font)
-                    .style("font-weight", "bold")
                     .style("fill", (d, i) => fill(i))
                     .attr("text-anchor", "middle")
+                    .style("font-size", d => (d.size) + "px")
                     .attr("transform", d => "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")")
                     .text(d => d.text);
             }
@@ -141,6 +143,9 @@ function fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientati
             console.log(e);
             return e;
         });
+
+    // State that word cloud is/will be drawn
+    isWordCloudDrawn = true;
 
     // Display download buttons
     document.getElementById("download-svg").style.display = "inline";
@@ -169,9 +174,8 @@ function downloadPNG() {
     saveSvgAsPng(document.getElementsByTagName("svg")[0], words_value + ".png");
 }
 
-// Eventlistener for Submit Button
-document.getElementById("submitButton").addEventListener("click", function (e) {
-    e.preventDefault();
+// function thats call the fetchJsonAndDraw function with paramatet attributes
+function callFetchJsonAndDraw() {
     var bool_words = document.getElementById("words").checkValidity();
     if (bool_words) {
         document.getElementById("words").style.backgroundColor = "#ffffff";
@@ -191,9 +195,45 @@ document.getElementById("submitButton").addEventListener("click", function (e) {
         var font = document.querySelector("input[name=\"fonts\"]:checked").value;
         var color_scheme = document.getElementById("color_scheme").value;
         var canvas_format = [document.getElementById("w").value, document.getElementById("h").value];
-        fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format);
+        var bg_color = $("#bg-color").spectrum("get").toHexString();
+        fetchJsonAndDraw(words_value, keyword, capitalize, max_words, orientations, padding, font, color_scheme, canvas_format, bg_color);
     }
+}
+
+// Eventlistener for submit button
+document.getElementById("submitButton").addEventListener("click", function (e) {
+    e.preventDefault();
+    console.log("submit");
+    callFetchJsonAndDraw();
     return false;
+});
+
+// Eventlistener for value change in controll panel
+document.getElementById("create_word_cloud").addEventListener("change", function () {
+    console.log("change");
+    if (isWordCloudDrawn == true)
+        callFetchJsonAndDraw();
+});
+
+
+$('input[name=keyword]').change(function () {
+    callFetchJsonAndDraw();
+});
+
+$('input[name=orientations]').change(function () {
+    callFetchJsonAndDraw();
+});
+
+$('input[name=fonts]').change(function () {
+    callFetchJsonAndDraw();
+});
+
+$('input[name=capitalize]').change(function () {
+    callFetchJsonAndDraw();
+});
+
+$('#bg-color').change(function () {
+    callFetchJsonAndDraw();
 });
 
 // Eventlistener for download SVG button
@@ -298,6 +338,7 @@ $("#frmContact").submit(function () {
 
 // Init spectrum color picker
 $("#bg-color").spectrum({
+    preferredFormat: "rgb",
     showInput: true,
     color: "#fff"
 });
