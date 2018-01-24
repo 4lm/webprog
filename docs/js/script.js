@@ -325,24 +325,19 @@ $("#frmContact").submit(function () {
         $.ajax({
             type: "POST",
             url: "https://formspree.io/7262de68-ae33-4758-b3a3-1283c824f2a6@michaltsis.net",
-            data: { vorname: vorname, nachname: nachname, mail: mail, nachricht: nachricht }
-        }).done(function (message) {
-            var erfolgsmeldung = $("#erfolgsmeldung");
-            erfolgsmeldung.html(message);
-            erfolgsmeldung.addClass("alert");
-            erfolgsmeldung.addClass("alert-success");
+            data: { vorname: vorname, nachname: nachname, mail: mail, nachricht: nachricht },
+            dataType: "json"
         });
-
     }
 
-    return false;
+    return true;
 });
 
 // Init spectrum color picker
 $("#bg-color").spectrum({
     preferredFormat: "rgb",
     showInput: true,
-    showPalette:true,
+    showPalette: true,
     color: "white",
     palette: [
         ["black", "white", "grey", "red", "orange"],
