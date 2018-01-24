@@ -216,23 +216,23 @@ document.getElementById("create_word_cloud").addEventListener("change", function
 });
 
 
-$('input[name=keyword]').change(function () {
+$("input[name=keyword]").change(function () {
     callFetchJsonAndDraw();
 });
 
-$('input[name=orientations]').change(function () {
+$("input[name=orientations]").change(function () {
     callFetchJsonAndDraw();
 });
 
-$('input[name=fonts]').change(function () {
+$("input[name=fonts]").change(function () {
     callFetchJsonAndDraw();
 });
 
-$('input[name=capitalize]').change(function () {
+$("input[name=capitalize]").change(function () {
     callFetchJsonAndDraw();
 });
 
-$('#bg-color').change(function () {
+$("#bg-color").change(function () {
     callFetchJsonAndDraw();
 });
 
@@ -340,5 +340,10 @@ $("#frmContact").submit(function () {
 $("#bg-color").spectrum({
     preferredFormat: "rgb",
     showInput: true,
-    color: "#fff"
+    showPalette:true,
+    color: "white",
+    palette: [
+        ["black", "white", "grey", "red", "orange"],
+        ["yellow", "green", "cyan", "blue", "violet"]
+    ]
 });
