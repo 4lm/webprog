@@ -335,7 +335,12 @@ $("#frmContact").submit(function () {
 
     }
 
-    return true;
+    vorname = "";
+    nachname = "";
+    mail = "";
+    nachricht = "";
+
+    return false;
 });
 
 // Init spectrum color picker
