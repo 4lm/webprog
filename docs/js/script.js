@@ -174,7 +174,7 @@ function downloadPNG() {
     saveSvgAsPng(document.getElementsByTagName("svg")[0], words_value + ".png");
 }
 
-// function thats call the fetchJsonAndDraw function with paramatet attributes
+// function that checks requirements & calls the fetchJsonAndDraw function with paramater attributes
 function callFetchJsonAndDraw() {
     var bool_words = document.getElementById("words").checkValidity();
     if (bool_words) {
