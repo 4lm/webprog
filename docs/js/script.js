@@ -215,23 +215,27 @@ document.getElementById("create_word_cloud").addEventListener("change", function
         callFetchJsonAndDraw();
 });
 
-
+// On change listener of keyword include
 $("input[name=keyword]").change(function () {
     callFetchJsonAndDraw();
 });
 
+// On change listener of orientations
 $("input[name=orientations]").change(function () {
     callFetchJsonAndDraw();
 });
 
+// On change listener of font choice
 $("input[name=fonts]").change(function () {
     callFetchJsonAndDraw();
 });
 
+// On change listener of first letter capitalization choice
 $("input[name=capitalize]").change(function () {
     callFetchJsonAndDraw();
 });
 
+// On change listener of color picker
 $("#bg-color").change(function () {
     callFetchJsonAndDraw();
 });
