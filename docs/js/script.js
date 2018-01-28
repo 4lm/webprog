@@ -286,15 +286,15 @@ $(function () {
 $("#frmContact").submit(function () {
     var formControl = true;
 
-    var frmGrpVorname = $("#vorname");
-    var frmGrpNachname = $("#nachname");
-    var frmGrpMail = $("#mail");
-    var frmGrpNachricht = $("#nachricht");
+    var inputVorname = $("#vorname");
+    var inputNachname = $("#nachname");
+    var inputMail = $("#mail");
+    var inputNachricht = $("#nachricht");
 
-    frmGrpVorname.removeClass("is-invalid");
-    frmGrpNachname.removeClass("is-invalid");
-    frmGrpMail.removeClass("is-invalid");
-    frmGrpNachricht.removeClass("is-invalid");
+    inputVorname.removeClass("is-invalid");
+    inputNachname.removeClass("is-invalid");
+    inputMail.removeClass("is-invalid");
+    inputNachricht.removeClass("is-invalid");
 
     var vorname = $("#vorname").val();
     var nachname = $("#nachname").val();
@@ -303,22 +303,22 @@ $("#frmContact").submit(function () {
 
     if (vorname == "") {
         formControl = false;
-        frmGrpVorname.addClass("is-invalid");
+        inputVorname.addClass("is-invalid");
     }
 
     if (nachname == "") {
         formControl = false;
-        frmGrpNachname.addClass("is-invalid");
+        inputNachname.addClass("is-invalid");
     }
 
     if (mail == "") {
         formControl = false;
-        frmGrpMail.addClass("is-invalid");
+        inputMail.addClass("is-invalid");
     }
 
     if (nachricht == "") {
         formControl = false;
-        frmGrpNachricht.addClass("is-invalid");
+        inputNachricht.addClass("is-invalid");
     }
 
     if (formControl) {
